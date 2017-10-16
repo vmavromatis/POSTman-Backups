@@ -1,0 +1,5251 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "APItude BookingAPI Swagger",
+    "description": "APItude complete postman collection, with both BookingAPI & ContentAPI. You have the full details of our API in our developer portal:\r\nhttps://developer.hotelbeds.com/docs?hotel",
+    "license": {
+      "name": "MIT",
+      "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+    }
+  },
+  "host": "example.com",
+  "basePath": "/hotel-api",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/1.0/hotels": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Other filters",
+        "tags": [
+          "Availability"
+        ],
+        "operationId": "Other filters",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OtherFiltersrequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Api-key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Signature",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept-Encoding",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OtherFiltersresponse"
+            },
+            "examples": {
+              "application/json": {
+                "auditData": {
+                  "processTime": "94",
+                  "timestamp": "2017-09-08 12:47:16.646",
+                  "requestHost": "212.170.239.110",
+                  "serverId": "sa37AUX3ROLBLIS.env#PL",
+                  "environment": "[int]",
+                  "release": "23c542efb2ca3c1642f5f0d87c6c410b81c52ee3",
+                  "token": "9536f01d-d2b6-40bf-ac8b-b7b8567b28cf",
+                  "internal": "0||BR|01|1|2||||||||||||1||1~1~1~0||0||0|wuupfvswdqfz342cejxfv3ku||"
+                },
+                "hotels": {
+                  "hotels": [
+                    {
+                      "code": 186629,
+                      "name": "K+K Hotel Picasso",
+                      "categoryCode": "4EST",
+                      "categoryName": "4 STARS",
+                      "destinationCode": "BCN",
+                      "destinationName": "Barcelona",
+                      "zoneCode": 8,
+                      "zoneName": "El Born",
+                      "latitude": "41.386763",
+                      "longitude": "2.183858",
+                      "rooms": [
+                        {
+                          "code": "DBL.AS",
+                          "name": "DOUBLE CLASSIC",
+                          "rates": [
+                            {
+                              "paymentType": "AT_WEB",
+                              "boardCode": "BB",
+                              "boardName": "BED AND BREAKFAST",
+                              "rooms": 1,
+                              "adults": 1,
+                              "children": 0,
+                              "shiftRates": [
+                                {
+                                  "rateKey": "20170913|20170918|W|102|186629|DBL.AS|CG-FIT B2B|BB||1~1~0||N@6A20D3E64C4445CAB51E27C08DBEF84B1247",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "1162.65",
+                                  "allotment": 1,
+                                  "checkIn": "2017-09-13",
+                                  "checkOut": "2017-09-18"
+                                },
+                                {
+                                  "rateKey": "20170914|20170919|W|102|186629|DBL.AS|CG-FIT B2B|BB||1~1~0||N@6A20D3E64C4445CAB51E27C08DBEF84B1247",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "1162.65",
+                                  "allotment": 1,
+                                  "checkIn": "2017-09-14",
+                                  "checkOut": "2017-09-19"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "minRate": "1162.65",
+                      "maxRate": "1162.65",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "checkIn": "2017-09-15",
+                  "total": 1,
+                  "checkOut": "2017-09-20"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/1.0/hotels",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Api-key": "{{Api-key}}",
+                "X-Signature": "{{X-Signature}}",
+                "Accept-Encoding": "gzip"
+              },
+              "body": "{\n  \"stay\": {\n    \"checkIn\": \"2017-11-15\",\n    \"checkOut\": \"2017-11-20\",\n    \"shiftDays\": \"2\"\n  },\n  \"occupancies\": [{\n    \"rooms\": 1,\n    \"adults\": 1,\n    \"children\": 0\n  }],\n  \"hotels\": {\n    \"hotel\": [1,\n    271]\n  },\n  \"filter\": {\n    \"minRate\": 100.000,\n    \"maxRate\": 1700.000,\n    \"minCategory\": 3,\n    \"maxCategory\": 5,\n    \"maxRooms\":3,\n    \"maxRatesPerRoom\": 3,\n    \"paymentType\": \"AT_HOTEL\",\n    \"packaging\": true,\n    \"hotelPackage\": \"YES\",\n    \"contract\": \"CG-FIT B2B\"\n  }\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "Access-Control-Allow-Headers": "x-requested-with, Content-Type, Api-Key",
+                "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Max-Age": "3600",
+                "Connection": "keep-alive",
+                "Content-Encoding": "gzip",
+                "Content-Length": "735",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Date": "Fri, 08 Sep 2017 10:47:16 GMT",
+                "Server": "Jetty(9.2.16.v20160414)",
+                "Vary": "Accept-Encoding",
+                "X-Application-Context": "hotel-booking-api:int:8383",
+                "X-Mashery-Responder": "prod-j-worker-eu-west-1a-59.mashery.com",
+                "X-Plan-QPS-Allotted": "4",
+                "X-Plan-QPS-Current": "1",
+                "X-Plan-Quota-Allotted": "50000",
+                "X-Plan-Quota-Current": "32",
+                "X-Plan-Quota-Reset": "Saturday, September 9, 2017 12:00:00 AM GMT",
+                "X-PlanMethod-QPS-Allotted": "3",
+                "X-PlanMethod-QPS-Current": "1"
+              },
+              "body": "{\"auditData\":{\"processTime\":\"94\",\"timestamp\":\"2017-09-08 12:47:16.646\",\"requestHost\":\"212.170.239.110\",\"serverId\":\"sa37AUX3ROLBLIS.env#PL\",\"environment\":\"[int]\",\"release\":\"23c542efb2ca3c1642f5f0d87c6c410b81c52ee3\",\"token\":\"9536f01d-d2b6-40bf-ac8b-b7b8567b28cf\",\"internal\":\"0||BR|01|1|2||||||||||||1||1~1~1~0||0||0|wuupfvswdqfz342cejxfv3ku||\"},\"hotels\":{\"hotels\":[{\"code\":186629,\"name\":\"K+K Hotel Picasso\",\"categoryCode\":\"4EST\",\"categoryName\":\"4 STARS\",\"destinationCode\":\"BCN\",\"destinationName\":\"Barcelona\",\"zoneCode\":8,\"zoneName\":\"El Born\",\"latitude\":\"41.386763\",\"longitude\":\"2.183858\",\"rooms\":[{\"code\":\"DBL.AS\",\"name\":\"DOUBLE CLASSIC\",\"rates\":[{\"paymentType\":\"AT_WEB\",\"boardCode\":\"BB\",\"boardName\":\"BED AND BREAKFAST\",\"rooms\":1,\"adults\":1,\"children\":0,\"shiftRates\":[{\"rateKey\":\"20170913|20170918|W|102|186629|DBL.AS|CG-FIT B2B|BB||1~1~0||N@6A20D3E64C4445CAB51E27C08DBEF84B1247\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"1162.65\",\"allotment\":1,\"checkIn\":\"2017-09-13\",\"checkOut\":\"2017-09-18\"},{\"rateKey\":\"20170914|20170919|W|102|186629|DBL.AS|CG-FIT B2B|BB||1~1~0||N@6A20D3E64C4445CAB51E27C08DBEF84B1247\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"1162.65\",\"allotment\":1,\"checkIn\":\"2017-09-14\",\"checkOut\":\"2017-09-19\"}]}]}],\"minRate\":\"1162.65\",\"maxRate\":\"1162.65\",\"currency\":\"EUR\"}],\"checkIn\":\"2017-09-15\",\"total\":1,\"checkOut\":\"2017-09-20\"}}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Other filters",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/1.0/checkrates": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "CheckRate",
+        "tags": [
+          "CheckRate"
+        ],
+        "operationId": "CheckRate",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CheckRateRequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Api-key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Signature",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept-Encoding",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CheckRateResponse"
+            },
+            "examples": {
+              "application/json": {
+                "auditData": {
+                  "processTime": "31",
+                  "timestamp": "2017-08-30 15:50:31.772",
+                  "requestHost": "212.170.239.110",
+                  "serverId": "sa37AUX3ROLBLIS.env#PL",
+                  "environment": "[int]",
+                  "release": "4c0c21f7a3982f3ad0cf88b921c4e04e7c36861f",
+                  "token": "9db694ae-82c0-4f49-9c5d-307a823e961f",
+                  "internal": "null|85AA606B40DC4C8DA2EB70ADEF1FB4E51545|||0|1|||||||||||R|1|1|||0||0|wuupfvswdqfz342cejxfv3ku||"
+                },
+                "hotel": {
+                  "checkOut": "2017-12-20",
+                  "checkIn": "2017-12-19",
+                  "code": 106753,
+                  "name": "Wingate By Wyndham Orlando International Airport",
+                  "categoryCode": "3EST",
+                  "categoryName": "3 STARS",
+                  "destinationCode": "MCO",
+                  "destinationName": "Orlando Area - Florida - FL",
+                  "zoneCode": 2,
+                  "zoneName": "Orlando International Airport",
+                  "latitude": "28.4626",
+                  "longitude": "-81.308",
+                  "rooms": [
+                    {
+                      "code": "DBL.2Q",
+                      "name": "DOUBLE TWO QUEEN BEDS",
+                      "rates": [
+                        {
+                          "rateKey": "20171219|20171220|W|235|106753|DBL.2Q|COM|DB||1~3~1|2|N@85AA606B40DC4C8DA2EB70ADEF1FB4E51545",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "104.84",
+                          "rateComments": "The person whose name is on the reservation must be at least 21 years of age to check in.. Rollaway beds are available based upon availability for an additional fee, payable locally.. Resort fee has been waived for Hotelbeds guests..  . .  .  YES Car park NO.Car park YES FEE: NO.",
+                          "paymentType": "AT_WEB",
+                          "packaging": false,
+                          "boardCode": "DB",
+                          "boardName": "BUFFET BREAKFAST",
+                          "cancellationPolicies": [
+                            {
+                              "amount": "104.84",
+                              "from": "2017-12-16T04:59:00+00:00"
+                            }
+                          ],
+                          "rateBreakDown": {
+                            "rateDiscounts": [
+                              {
+                                "code": "XP",
+                                "name": "EXTRA PERSON",
+                                "amount": "-95.64"
+                              }
+                            ]
+                          },
+                          "rooms": 1,
+                          "adults": 3,
+                          "children": 1,
+                          "childrenAges": "2",
+                          "offers": [
+                            {
+                              "code": "9008",
+                              "name": "Extra bed discount",
+                              "amount": "-95.64"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "totalNet": "104.84",
+                  "currency": "USD"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/1.0/checkrates",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Api-key": "{{Api-key}}",
+                "X-Signature": "{{X-Signature}}",
+                "Accept-Encoding": "gzip"
+              },
+              "body": "{\n  \"rooms\": [{\n    \"rateKey\": \"20171115|20171120|W|52|1|SGL.ST|CG-EXT LONG RO|RO||1~1~0||N@A8921A639A0D46D88735806D109FA6E81544\"\n  }]\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "Access-Control-Allow-Headers": "x-requested-with, Content-Type, Api-Key",
+                "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Max-Age": "3600",
+                "Connection": "keep-alive",
+                "Content-Encoding": "gzip",
+                "Content-Length": "1017",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Date": "Wed, 30 Aug 2017 13:50:31 GMT",
+                "Server": "Jetty(9.2.16.v20160414)",
+                "Vary": "Accept-Encoding",
+                "X-Application-Context": "hotel-booking-api:int:8383",
+                "X-Mashery-Responder": "prod-j-worker-eu-west-1b-63.mashery.com",
+                "X-Plan-QPS-Allotted": "4",
+                "X-Plan-QPS-Current": "1",
+                "X-Plan-Quota-Allotted": "50000",
+                "X-Plan-Quota-Current": "147",
+                "X-Plan-Quota-Reset": "Thursday, August 31, 2017 12:00:00 AM GMT",
+                "X-PlanMethod-QPS-Allotted": "3",
+                "X-PlanMethod-QPS-Current": "1"
+              },
+              "body": "{\"auditData\":{\"processTime\":\"31\",\"timestamp\":\"2017-08-30 15:50:31.772\",\"requestHost\":\"212.170.239.110\",\"serverId\":\"sa37AUX3ROLBLIS.env#PL\",\"environment\":\"[int]\",\"release\":\"4c0c21f7a3982f3ad0cf88b921c4e04e7c36861f\",\"token\":\"9db694ae-82c0-4f49-9c5d-307a823e961f\",\"internal\":\"null|85AA606B40DC4C8DA2EB70ADEF1FB4E51545|||0|1|||||||||||R|1|1|||0||0|wuupfvswdqfz342cejxfv3ku||\"},\"hotel\":{\"checkOut\":\"2017-12-20\",\"checkIn\":\"2017-12-19\",\"code\":106753,\"name\":\"Wingate By Wyndham Orlando International Airport\",\"categoryCode\":\"3EST\",\"categoryName\":\"3 STARS\",\"destinationCode\":\"MCO\",\"destinationName\":\"Orlando Area - Florida - FL\",\"zoneCode\":2,\"zoneName\":\"Orlando International Airport\",\"latitude\":\"28.4626\",\"longitude\":\"-81.308\",\"rooms\":[{\"code\":\"DBL.2Q\",\"name\":\"DOUBLE TWO QUEEN BEDS\",\"rates\":[{\"rateKey\":\"20171219|20171220|W|235|106753|DBL.2Q|COM|DB||1~3~1|2|N@85AA606B40DC4C8DA2EB70ADEF1FB4E51545\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"104.84\",\"rateComments\":\"The person whose name is on the reservation must be at least 21 years of age to check in.. Rollaway beds are available based upon availability for an additional fee, payable locally.. Resort fee has been waived for Hotelbeds guests..  . .  .  YES Car park NO.Car park YES FEE: NO.\",\"paymentType\":\"AT_WEB\",\"packaging\":false,\"boardCode\":\"DB\",\"boardName\":\"BUFFET BREAKFAST\",\"cancellationPolicies\":[{\"amount\":\"104.84\",\"from\":\"2017-12-15T23:59:00-05:00\"}],\"rateBreakDown\":{\"rateDiscounts\":[{\"code\":\"XP\",\"name\":\"EXTRA PERSON\",\"amount\":\"-95.64\"}]},\"rooms\":1,\"adults\":3,\"children\":1,\"childrenAges\":\"2\",\"offers\":[{\"code\":\"9008\",\"name\":\"Extra bed discount\",\"amount\":\"-95.64\"}]}]}],\"totalNet\":\"104.84\",\"currency\":\"USD\"}}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "CheckRate",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/1.2/bookings": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Booking",
+        "tags": [
+          "Booking"
+        ],
+        "operationId": "Booking",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BookingRequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Api-key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Signature",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept-Encoding",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BookingResponse"
+            },
+            "examples": {
+              "application/json": {
+                "auditData": {
+                  "processTime": "796",
+                  "timestamp": "2017-08-31 15:40:40.244",
+                  "requestHost": "212.170.239.110",
+                  "serverId": "sa37AUX3ROLBLIS.env#PL",
+                  "environment": "[int]",
+                  "release": "23c542efb2ca3c1642f5f0d87c6c410b81c52ee3",
+                  "token": "45f63673-32b7-493f-88af-3f2a060273fc",
+                  "internal": "0|AB4947E0B997444E92BDD56C969894111520|BR|05|1|3|||||||AT_WEB||||R|9|2|1~2~2~0||0||0|wuupfvswdqfz342cejxfv3ku||"
+                },
+                "booking": {
+                  "reference": "258-555202",
+                  "clientReference": "INTEGRATIONAGENCY",
+                  "creationDate": "2017-08-31",
+                  "status": "CONFIRMED",
+                  "modificationPolicies": {
+                    "cancellation": true,
+                    "modification": true
+                  },
+                  "creationUser": "wuupfvswdqfz342cejxfv3ku",
+                  "holder": {
+                    "name": "INTEGRATIONTESTFIRSTNAME",
+                    "surname": "INTEGRATIONTESTLASTNAME"
+                  },
+                  "hotel": {
+                    "checkOut": "2017-11-15",
+                    "checkIn": "2017-11-14",
+                    "code": 424819,
+                    "name": "America Do Sul",
+                    "categoryCode": "3EST",
+                    "categoryName": "3 STARS",
+                    "destinationCode": "SAO",
+                    "destinationName": "Sao Paulo",
+                    "zoneCode": 1,
+                    "zoneName": "Sao Paulo - City",
+                    "latitude": "-23.540438",
+                    "longitude": "-46.642541",
+                    "rooms": [
+                      {
+                        "status": "CONFIRMED",
+                        "id": 1,
+                        "code": "DBL.ST",
+                        "name": "DOUBLE STANDARD",
+                        "paxes": [
+                          {
+                            "roomId": 1,
+                            "type": "AD",
+                            "name": "First Adult Name"
+                          },
+                          {
+                            "roomId": 1,
+                            "type": "AD",
+                            "name": "Second Adult Name"
+                          },
+                          {
+                            "roomId": 2,
+                            "type": "AD",
+                            "name": "Third Adult Name"
+                          },
+                          {
+                            "roomId": 2,
+                            "type": "AD",
+                            "name": "Fourth Adult Name"
+                          }
+                        ],
+                        "rates": [
+                          {
+                            "rateClass": "NOR",
+                            "net": "68.04",
+                            "rateComments": "Car park NO   . Check-in hour 14:00  14:00. ",
+                            "paymentType": "AT_WEB",
+                            "packaging": false,
+                            "boardCode": "BB",
+                            "boardName": "BED AND BREAKFAST",
+                            "cancellationPolicies": [
+                              {
+                                "amount": "68.04",
+                                "from": "2017-11-11T02:59:00+00:00"
+                              }
+                            ],
+                            "rooms": 2,
+                            "adults": 2,
+                            "children": 0
+                          }
+                        ]
+                      }
+                    ],
+                    "totalNet": "68.04",
+                    "currency": "USD",
+                    "supplier": {
+                      "name": "ADVANTOS BRASIL OPERADORA DE TURISMO, LTDA",
+                      "vatNumber": "BR16847249000177"
+                    }
+                  },
+                  "totalNet": 68.04,
+                  "pendingAmount": 68.04,
+                  "currency": "USD"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/1.2/bookings",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Api-key": "{{Api-key}}",
+                "X-Signature": "{{X-Signature}}",
+                "Accept-Encoding": "gzip"
+              },
+              "body": "{\n  \"holder\": {\n    \"name\": \"IntegrationTestFirstName\",\n    \"surname\": \"IntegrationTestLastName\"\n  },\n  \"rooms\": [{\n    \"rateKey\": \"20171115|20171120|W|52|1|DBL.ST|ID_B2B_25|RO|EM4TIES|1~1~0||N@1884739731\",\n    \"paxes\": [{\n      \"roomId\": \"1\",\n      \"type\": \"AD\",\n      \"name\": \"Adult Name\"\n    }]\n  }],\n  \"clientReference\": \"IntegrationAgency\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "Access-Control-Allow-Headers": "x-requested-with, Content-Type, Api-Key",
+                "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Max-Age": "3600",
+                "Connection": "keep-alive",
+                "Content-Encoding": "gzip",
+                "Content-Length": "1025",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Date": "Thu, 31 Aug 2017 13:40:39 GMT",
+                "Server": "Jetty(9.2.16.v20160414)",
+                "Vary": "Accept-Encoding",
+                "X-Application-Context": "hotel-booking-api:int:8383",
+                "X-Mashery-Responder": "prod-j-worker-eu-west-1c-55.mashery.com",
+                "X-Plan-QPS-Allotted": "4",
+                "X-Plan-QPS-Current": "1",
+                "X-Plan-Quota-Allotted": "50000",
+                "X-Plan-Quota-Current": "83",
+                "X-Plan-Quota-Reset": "Friday, September 1, 2017 12:00:00 AM GMT",
+                "X-PlanMethod-QPS-Allotted": "6",
+                "X-PlanMethod-QPS-Current": "1"
+              },
+              "body": "{\"auditData\":{\"processTime\":\"796\",\"timestamp\":\"2017-08-31 15:40:40.244\",\"requestHost\":\"212.170.239.110\",\"serverId\":\"sa37AUX3ROLBLIS.env#PL\",\"environment\":\"[int]\",\"release\":\"23c542efb2ca3c1642f5f0d87c6c410b81c52ee3\",\"token\":\"45f63673-32b7-493f-88af-3f2a060273fc\",\"internal\":\"0|AB4947E0B997444E92BDD56C969894111520|BR|05|1|3|||||||AT_WEB||||R|9|2|1~2~2~0||0||0|wuupfvswdqfz342cejxfv3ku||\"},\"booking\":{\"reference\":\"258-555202\",\"clientReference\":\"INTEGRATIONAGENCY\",\"creationDate\":\"2017-08-31\",\"status\":\"CONFIRMED\",\"modificationPolicies\":{\"cancellation\":true,\"modification\":true},\"creationUser\":\"wuupfvswdqfz342cejxfv3ku\",\"holder\":{\"name\":\"INTEGRATIONTESTFIRSTNAME\",\"surname\":\"INTEGRATIONTESTLASTNAME\"},\"hotel\":{\"checkOut\":\"2017-11-15\",\"checkIn\":\"2017-11-14\",\"code\":424819,\"name\":\"America Do Sul\",\"categoryCode\":\"3EST\",\"categoryName\":\"3 STARS\",\"destinationCode\":\"SAO\",\"destinationName\":\"Sao Paulo\",\"zoneCode\":1,\"zoneName\":\"Sao Paulo - City\",\"latitude\":\"-23.540438\",\"longitude\":\"-46.642541\",\"rooms\":[{\"status\":\"CONFIRMED\",\"id\":1,\"code\":\"DBL.ST\",\"name\":\"DOUBLE STANDARD\",\"paxes\":[{\"roomId\":1,\"type\":\"AD\",\"name\":\"First Adult Name\"},{\"roomId\":1,\"type\":\"AD\",\"name\":\"Second Adult Name\"},{\"roomId\":2,\"type\":\"AD\",\"name\":\"Third Adult Name\"},{\"roomId\":2,\"type\":\"AD\",\"name\":\"Fourth Adult Name\"}],\"rates\":[{\"rateClass\":\"NOR\",\"net\":\"68.04\",\"rateComments\":\"Car park NO   . Check-in hour 14:00  14:00. \",\"paymentType\":\"AT_WEB\",\"packaging\":false,\"boardCode\":\"BB\",\"boardName\":\"BED AND BREAKFAST\",\"cancellationPolicies\":[{\"amount\":\"68.04\",\"from\":\"2017-11-10T23:59:00-03:00\"}],\"rooms\":2,\"adults\":2,\"children\":0}]}],\"totalNet\":\"68.04\",\"currency\":\"USD\",\"supplier\":{\"name\":\"ADVANTOS BRASIL OPERADORA DE TURISMO, LTDA\",\"vatNumber\":\"BR16847249000177\"}},\"totalNet\":68.04,\"pendingAmount\":68.04,\"currency\":\"USD\"}}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Booking",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/1.0/bookings/{booking_reference}": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "BookingDetail",
+        "tags": [
+          "Post booking operations"
+        ],
+        "operationId": "BookingDetail",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Api-key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Signature",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "booking_reference",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "BookingChange",
+        "tags": [
+          "Post booking operations"
+        ],
+        "operationId": "BookingChange",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BookingChangeRequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Api-key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Signature",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept-Encoding",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "booking_reference",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BookingChangeResponse"
+            },
+            "examples": {
+              "application/json": {
+                "auditData": {
+                  "processTime": "3089",
+                  "timestamp": "2017-08-31 15:44:45.703",
+                  "requestHost": "212.170.239.110",
+                  "serverId": "sa37AUX3ROLBLIS.env#PL",
+                  "environment": "[int]",
+                  "release": "23c542efb2ca3c1642f5f0d87c6c410b81c52ee3",
+                  "token": "46b59f25-9ea3-4824-a679-e10352d5787b",
+                  "internal": "null||||0|0||||||||||||0||||0||0|wuupfvswdqfz342cejxfv3ku||"
+                },
+                "booking": {
+                  "reference": "258-555202",
+                  "clientReference": "INTEGRATIONAGENCY",
+                  "creationDate": "2017-08-31",
+                  "status": "CONFIRMED",
+                  "modificationPolicies": {
+                    "cancellation": true,
+                    "modification": true
+                  },
+                  "creationUser": "wuupfvswdqfz342cejxfv3ku",
+                  "holder": {
+                    "name": "INTEGRATIONTESTFIRSTNAME",
+                    "surname": "INTEGRATIONTESTLASTNAME"
+                  },
+                  "hotel": {
+                    "checkOut": "2017-11-15",
+                    "checkIn": "2017-11-14",
+                    "code": 424819,
+                    "name": "America Do Sul",
+                    "categoryCode": "3EST",
+                    "categoryName": "3 STARS",
+                    "destinationCode": "SAO",
+                    "destinationName": "Sao Paulo",
+                    "zoneCode": 1,
+                    "zoneName": "Sao Paulo - City",
+                    "latitude": "-23.540438",
+                    "longitude": "-46.642541",
+                    "rooms": [
+                      {
+                        "status": "CONFIRMED",
+                        "id": 1,
+                        "code": "DBL.ST",
+                        "name": "DOUBLE STANDARD",
+                        "paxes": [
+                          {
+                            "roomId": 1,
+                            "type": "AD",
+                            "name": "Second Adult Name"
+                          },
+                          {
+                            "roomId": 1,
+                            "type": "AD",
+                            "name": "First Adult Name"
+                          }
+                        ],
+                        "rates": [
+                          {
+                            "rateClass": "NOR",
+                            "net": "34.02",
+                            "rateComments": "Car park NO   . Check-in hour 14:00  14:00. ",
+                            "paymentType": "AT_WEB",
+                            "packaging": false,
+                            "boardCode": "BB",
+                            "boardName": "BED AND BREAKFAST",
+                            "cancellationPolicies": [
+                              {
+                                "amount": "34.02",
+                                "from": "2017-11-11T02:59:00+00:00"
+                              }
+                            ],
+                            "rooms": 1,
+                            "adults": 2,
+                            "children": 0
+                          }
+                        ]
+                      }
+                    ],
+                    "totalNet": "34.02",
+                    "currency": "USD",
+                    "supplier": {
+                      "name": "ADVANTOS BRASIL OPERADORA DE TURISMO, LTDA",
+                      "vatNumber": "BR16847249000177"
+                    }
+                  },
+                  "totalNet": 34.02,
+                  "pendingAmount": 34.02,
+                  "currency": "USD"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "BookingCancellation",
+        "tags": [
+          "Post booking operations"
+        ],
+        "operationId": "BookingCancellation",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "cancellationFlag",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Api-key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Signature",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "booking_reference",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/1.0/bookings": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "BookingList",
+        "tags": [
+          "Post booking operations"
+        ],
+        "operationId": "BookingList",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "start",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time",
+            "description": ""
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "format": "date-time",
+            "description": ""
+          },
+          {
+            "name": "filterType",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Api-key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Signature",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/1.0/bookings?start=2017-08-15&end=2017-09-10&filterType=CREATION&status=ALL&from=1&to=25",
+              "headers": {
+                "Accept": "application/json",
+                "Api-key": "{{Api-key}}",
+                "X-Signature": "{{X-Signature}}"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "BookingList",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/1.0/status": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "0. Status",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "0. Status",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Api-key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Signature",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/1.0/status",
+              "headers": {
+                "Accept": "application/json",
+                "Api-key": "{{Api-key}}",
+                "X-Signature": "{{X-Signature}}"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "0. Status",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AvailabilityByHotelCoderequest": {
+      "title": "Availability by hotel codeRequest",
+      "example": {
+        "stay": {
+          "checkIn": "2017-11-15",
+          "checkOut": "2017-11-20"
+        },
+        "occupancies": [
+          {
+            "rooms": 1,
+            "adults": 1,
+            "children": 0
+          }
+        ],
+        "hotels": {
+          "hotel": [
+            1,
+            271
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "stay": {
+          "$ref": "#/definitions/Stay"
+        },
+        "occupancies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Occupancy"
+          }
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels"
+        }
+      },
+      "required": [
+        "stay",
+        "occupancies",
+        "hotels"
+      ]
+    },
+    "Stay": {
+      "title": "Stay",
+      "type": "object",
+      "properties": {
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "checkIn",
+        "checkOut"
+      ]
+    },
+    "Occupancy": {
+      "title": "Occupancy",
+      "type": "object",
+      "properties": {
+        "rooms": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "adults": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "children": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "rooms",
+        "adults",
+        "children"
+      ]
+    },
+    "Hotels": {
+      "title": "Hotels",
+      "type": "object",
+      "properties": {
+        "hotel": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "required": [
+        "hotel"
+      ]
+    },
+    "AvailabilityByHotelCoderesponse": {
+      "title": "Availability by hotel codeResponse",
+      "example": {
+        "auditData": {
+          "processTime": "33",
+          "timestamp": "2017-08-29 18:08:10.034",
+          "requestHost": "212.170.239.110",
+          "serverId": "sa3RKSJACHXE79K.env#PL",
+          "environment": "[int]",
+          "release": "4c0c21f7a3982f3ad0cf88b921c4e04e7c36861f",
+          "token": "b578cb37-fa88-405d-899b-b9514a15aedb",
+          "internal": "0|9984AA31D1D140DEBA333FA7C03598D21808|BR|06|1|1||||||||||||1||1~1~3~1||0||0|wuupfvswdqfz342cejxfv3ku||"
+        },
+        "hotels": {
+          "hotels": [
+            {
+              "code": 106753,
+              "name": "Wingate By Wyndham Orlando International Airport",
+              "categoryCode": "3EST",
+              "categoryName": "3 STARS",
+              "destinationCode": "MCO",
+              "destinationName": "Orlando Area - Florida - FL",
+              "zoneCode": 2,
+              "zoneName": "Orlando International Airport",
+              "latitude": "28.4626",
+              "longitude": "-81.308",
+              "rooms": [
+                {
+                  "code": "DBL.2Q",
+                  "name": "DOUBLE TWO QUEEN BEDS",
+                  "rates": [
+                    {
+                      "rateKey": "20171219|20171220|W|235|106753|DBL.2Q|COM|DB||1~3~1|2|N@9984AA31D1D140DEBA333FA7C03598D21808",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "104.84",
+                      "allotment": 5,
+                      "rateCommentsId": "235|38397|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "DB",
+                      "boardName": "BUFFET BREAKFAST",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "104.84",
+                          "from": "2017-12-16T04:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 3,
+                      "children": 1,
+                      "childrenAges": "2",
+                      "offers": [
+                        {
+                          "code": "9008",
+                          "name": "Extra bed discount",
+                          "amount": "-95.64"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "minRate": "104.84",
+              "maxRate": "104.84",
+              "currency": "USD"
+            }
+          ],
+          "checkIn": "2017-12-19",
+          "total": 1,
+          "checkOut": "2017-12-20"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "auditData": {
+          "$ref": "#/definitions/AuditData"
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels6"
+        }
+      },
+      "required": [
+        "auditData",
+        "hotels"
+      ]
+    },
+    "AuditData": {
+      "title": "AuditData",
+      "type": "object",
+      "properties": {
+        "processTime": {
+          "description": "",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "",
+          "type": "string"
+        },
+        "requestHost": {
+          "description": "",
+          "type": "string"
+        },
+        "serverId": {
+          "description": "",
+          "type": "string"
+        },
+        "environment": {
+          "description": "",
+          "type": "string"
+        },
+        "release": {
+          "description": "",
+          "type": "string"
+        },
+        "token": {
+          "description": "",
+          "type": "string"
+        },
+        "internal": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "processTime",
+        "timestamp",
+        "requestHost",
+        "serverId",
+        "environment",
+        "release",
+        "token",
+        "internal"
+      ]
+    },
+    "Hotels6": {
+      "title": "Hotels6",
+      "type": "object",
+      "properties": {
+        "hotels": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hotels7"
+          }
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "total": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hotels",
+        "checkIn",
+        "total",
+        "checkOut"
+      ]
+    },
+    "Hotels7": {
+      "title": "Hotels7",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryCode": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryName": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationCode": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationName": {
+          "description": "",
+          "type": "string"
+        },
+        "zoneCode": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "zoneName": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Room"
+          }
+        },
+        "minRate": {
+          "description": "",
+          "type": "string"
+        },
+        "maxRate": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "categoryCode",
+        "categoryName",
+        "destinationCode",
+        "destinationName",
+        "zoneCode",
+        "zoneName",
+        "latitude",
+        "longitude",
+        "rooms",
+        "minRate",
+        "maxRate",
+        "currency"
+      ]
+    },
+    "Room": {
+      "title": "Room",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "rates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rate"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "rates"
+      ]
+    },
+    "Rate": {
+      "title": "Rate",
+      "type": "object",
+      "properties": {
+        "rateKey": {
+          "description": "",
+          "type": "string"
+        },
+        "rateClass": {
+          "description": "",
+          "type": "string"
+        },
+        "rateType": {
+          "description": "",
+          "type": "string"
+        },
+        "net": {
+          "description": "",
+          "type": "string"
+        },
+        "allotment": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "rateCommentsId": {
+          "description": "",
+          "type": "string"
+        },
+        "paymentType": {
+          "description": "",
+          "type": "string"
+        },
+        "packaging": {
+          "description": "",
+          "type": "boolean"
+        },
+        "boardCode": {
+          "description": "",
+          "type": "string"
+        },
+        "boardName": {
+          "description": "",
+          "type": "string"
+        },
+        "cancellationPolicies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CancellationPolicy"
+          }
+        },
+        "rooms": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "adults": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "children": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "childrenAges": {
+          "description": "",
+          "type": "string"
+        },
+        "offers": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Offer"
+          }
+        }
+      },
+      "required": [
+        "rateKey",
+        "rateClass",
+        "rateType",
+        "net",
+        "allotment",
+        "rateCommentsId",
+        "paymentType",
+        "packaging",
+        "boardCode",
+        "boardName",
+        "cancellationPolicies",
+        "rooms",
+        "adults",
+        "children",
+        "childrenAges",
+        "offers"
+      ]
+    },
+    "CancellationPolicy": {
+      "title": "CancellationPolicy",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "",
+          "type": "string"
+        },
+        "from": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "from"
+      ]
+    },
+    "Offer": {
+      "title": "Offer",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "amount": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "amount"
+      ]
+    },
+    "AvailabilityByDestinationrequest": {
+      "title": "Availability by destinationRequest",
+      "example": {
+        "stay": {
+          "checkIn": "2017-11-15",
+          "checkOut": "2017-11-20",
+          "shiftDays": "2"
+        },
+        "occupancies": [
+          {
+            "rooms": 1,
+            "adults": 1,
+            "children": 0
+          }
+        ],
+        "destination": {
+          "code": "MCO"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "stay": {
+          "$ref": "#/definitions/Stay13"
+        },
+        "occupancies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Occupancy"
+          }
+        },
+        "destination": {
+          "$ref": "#/definitions/Destination"
+        }
+      },
+      "required": [
+        "stay",
+        "occupancies",
+        "destination"
+      ]
+    },
+    "Stay13": {
+      "title": "Stay13",
+      "type": "object",
+      "properties": {
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        },
+        "shiftDays": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "checkIn",
+        "checkOut",
+        "shiftDays"
+      ]
+    },
+    "Destination": {
+      "title": "Destination",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    },
+    "AvailabilityByDestinationresponse": {
+      "title": "Availability by destinationResponse",
+      "example": {
+        "auditData": {
+          "processTime": "1923",
+          "timestamp": "2017-08-30 11:41:49.175",
+          "requestHost": "52.49.114.253",
+          "serverId": "sa37AUX3ROLBLIS.env#PL",
+          "environment": "[int]",
+          "release": "4c0c21f7a3982f3ad0cf88b921c4e04e7c36861f",
+          "token": "9d9f4f43-0ce3-4ad2-891b-f0be9546aeab",
+          "internal": "0||BR|03|1|6||||||||||||9||1~1~1~1||0||0|wuupfvswdqfz342cejxfv3ku||"
+        },
+        "hotels": {
+          "hotels": [
+            {
+              "code": 180687,
+              "name": "Mission Inn Resort & Club",
+              "categoryCode": "4EST",
+              "categoryName": "4 STARS",
+              "destinationCode": "MCO",
+              "destinationName": "Orlando Area - Florida - FL",
+              "zoneCode": 1,
+              "zoneName": "Howey-In-The-Hills",
+              "latitude": "28.725834",
+              "longitude": "-81.781937",
+              "rooms": [
+                {
+                  "code": "SUI.CB",
+                  "name": "SUITE CLUB",
+                  "rates": [
+                    {
+                      "paymentType": "AT_WEB",
+                      "boardCode": "RO",
+                      "boardName": "ROOM ONLY",
+                      "rooms": 1,
+                      "adults": 1,
+                      "children": 1,
+                      "childrenAges": "4",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170917|20170922|W|235|180687|SUI.CB|STA|RO||1~1~1|4|N@37816A28834447B2A657B306E5A953531141",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "664.52",
+                          "allotment": 176,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    },
+                    {
+                      "paymentType": "AT_WEB",
+                      "boardCode": "DB",
+                      "boardName": "BUFFET BREAKFAST",
+                      "rooms": 1,
+                      "adults": 1,
+                      "children": 1,
+                      "childrenAges": "4",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170917|20170922|W|235|180687|SUI.CB|STA|DB||1~1~1|4|N@37816A28834447B2A657B306E5A953531141",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "846.92",
+                          "allotment": 176,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "code": "DBL.DX",
+                  "name": "DOUBLE DELUXE",
+                  "rates": [
+                    {
+                      "paymentType": "AT_WEB",
+                      "boardCode": "RO",
+                      "boardName": "ROOM ONLY",
+                      "rooms": 1,
+                      "adults": 1,
+                      "children": 1,
+                      "childrenAges": "4",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170917|20170922|W|235|180687|DBL.DX|STA|RO||1~1~1|4|N@37816A28834447B2A657B306E5A953531141",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "707.60",
+                          "allotment": 176,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    },
+                    {
+                      "paymentType": "AT_WEB",
+                      "boardCode": "DB",
+                      "boardName": "BUFFET BREAKFAST",
+                      "rooms": 1,
+                      "adults": 1,
+                      "children": 1,
+                      "childrenAges": "4",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170917|20170922|W|235|180687|DBL.DX|STA|DB||1~1~1|4|N@37816A28834447B2A657B306E5A953531141",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "890.00",
+                          "allotment": 176,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "code": "VIL.B2-1",
+                  "name": "VILLA TWO BEDROOMS VILLA SANTA CRUZ",
+                  "rates": [
+                    {
+                      "paymentType": "AT_WEB",
+                      "boardCode": "RO",
+                      "boardName": "ROOM ONLY",
+                      "rooms": 1,
+                      "adults": 1,
+                      "children": 1,
+                      "childrenAges": "4",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170917|20170922|W|235|180687|VIL.B2-1|STA|RO||1~1~1|4|N@37816A28834447B2A657B306E5A953531141",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "1815.15",
+                          "allotment": 176,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    },
+                    {
+                      "paymentType": "AT_WEB",
+                      "boardCode": "DB",
+                      "boardName": "BUFFET BREAKFAST",
+                      "rooms": 1,
+                      "adults": 1,
+                      "children": 1,
+                      "childrenAges": "4",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170917|20170922|W|235|180687|VIL.B2-1|STA|DB||1~1~1|4|N@37816A28834447B2A657B306E5A953531141",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "1997.55",
+                          "allotment": 176,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "minRate": "664.52",
+              "maxRate": "1997.55",
+              "currency": "USD"
+            }
+          ],
+          "checkIn": "2017-09-15",
+          "total": 1,
+          "checkOut": "2017-09-20"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "auditData": {
+          "$ref": "#/definitions/AuditData"
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels18"
+        }
+      },
+      "required": [
+        "auditData",
+        "hotels"
+      ]
+    },
+    "Hotels18": {
+      "title": "Hotels18",
+      "type": "object",
+      "properties": {
+        "hotels": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hotels19"
+          }
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "total": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hotels",
+        "checkIn",
+        "total",
+        "checkOut"
+      ]
+    },
+    "Hotels19": {
+      "title": "Hotels19",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryCode": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryName": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationCode": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationName": {
+          "description": "",
+          "type": "string"
+        },
+        "zoneCode": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "zoneName": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Room20"
+          }
+        },
+        "minRate": {
+          "description": "",
+          "type": "string"
+        },
+        "maxRate": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "categoryCode",
+        "categoryName",
+        "destinationCode",
+        "destinationName",
+        "zoneCode",
+        "zoneName",
+        "latitude",
+        "longitude",
+        "rooms",
+        "minRate",
+        "maxRate",
+        "currency"
+      ]
+    },
+    "Room20": {
+      "title": "Room20",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "rates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rate21"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "rates"
+      ]
+    },
+    "Rate21": {
+      "title": "Rate21",
+      "type": "object",
+      "properties": {
+        "paymentType": {
+          "description": "",
+          "type": "string"
+        },
+        "boardCode": {
+          "description": "",
+          "type": "string"
+        },
+        "boardName": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "adults": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "children": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "childrenAges": {
+          "description": "",
+          "type": "string"
+        },
+        "shiftRates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ShiftRate"
+          }
+        }
+      },
+      "required": [
+        "paymentType",
+        "boardCode",
+        "boardName",
+        "rooms",
+        "adults",
+        "children",
+        "childrenAges",
+        "shiftRates"
+      ]
+    },
+    "ShiftRate": {
+      "title": "ShiftRate",
+      "type": "object",
+      "properties": {
+        "rateKey": {
+          "description": "",
+          "type": "string"
+        },
+        "rateClass": {
+          "description": "",
+          "type": "string"
+        },
+        "rateType": {
+          "description": "",
+          "type": "string"
+        },
+        "net": {
+          "description": "",
+          "type": "string"
+        },
+        "allotment": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rateKey",
+        "rateClass",
+        "rateType",
+        "net",
+        "allotment",
+        "checkIn",
+        "checkOut"
+      ]
+    },
+    "AvailabilityByGeolocationrequest": {
+      "title": "Availability by geolocationRequest",
+      "example": {
+        "stay": {
+          "checkIn": "2017-11-15",
+          "checkOut": "2017-11-20",
+          "shiftDays": "2"
+        },
+        "occupancies": [
+          {
+            "rooms": 1,
+            "adults": 1,
+            "children": 0
+          }
+        ],
+        "geolocation": {
+          "latitude": 39.57119,
+          "longitude": 2.6466339999999491,
+          "radius": 20,
+          "unit": "km"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "stay": {
+          "$ref": "#/definitions/Stay13"
+        },
+        "occupancies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Occupancy"
+          }
+        },
+        "geolocation": {
+          "$ref": "#/definitions/Geolocation"
+        }
+      },
+      "required": [
+        "stay",
+        "occupancies",
+        "geolocation"
+      ]
+    },
+    "Geolocation": {
+      "title": "Geolocation",
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "description": "",
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "description": "",
+          "type": "number",
+          "format": "double"
+        },
+        "radius": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "unit": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude",
+        "radius",
+        "unit"
+      ]
+    },
+    "AvailabilityByGeolocationresponse": {
+      "title": "Availability by geolocationResponse",
+      "example": {
+        "auditData": {
+          "processTime": "39",
+          "timestamp": "2017-08-30 10:49:48.506",
+          "requestHost": "212.170.239.110",
+          "serverId": "sa37AUX3ROLBLIS.env#PL",
+          "environment": "[int]",
+          "release": "4c0c21f7a3982f3ad0cf88b921c4e04e7c36861f",
+          "token": "b72133e7-533c-4b06-b2cf-4ccc2af4695d",
+          "internal": "0||BR|11|1|3||||||||||||1||1~1~4~0||0||0|wuupfvswdqfz342cejxfv3ku||"
+        },
+        "hotels": {
+          "hotels": [
+            {
+              "code": 3562,
+              "name": "Silken Monumental Naranco",
+              "categoryCode": "4EST",
+              "categoryName": "4 STARS",
+              "destinationCode": "OVD",
+              "destinationName": "Asturias",
+              "zoneCode": 10,
+              "zoneName": "Oviedo",
+              "latitude": "43.364624",
+              "longitude": "-5.863767",
+              "rooms": [
+                {
+                  "code": "FAM.C4",
+                  "name": "FAMILY ROOM CAPACITY 4",
+                  "rates": [
+                    {
+                      "paymentType": "AT_WEB",
+                      "boardCode": "RO",
+                      "boardName": "ROOM ONLY",
+                      "rooms": 1,
+                      "adults": 4,
+                      "children": 0,
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170913|20170918|W|102|3562|FAM.C4|CG-BARFAMILIAR|RO||1~4~0||N@93C5F027D9C04F3AB6392149BFF8ED211049",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "525.42",
+                          "allotment": 1,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        }
+                      ]
+                    },
+                    {
+                      "paymentType": "AT_WEB",
+                      "boardCode": "BB",
+                      "boardName": "BED AND BREAKFAST",
+                      "rooms": 1,
+                      "adults": 4,
+                      "children": 0,
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170913|20170918|W|102|3562|FAM.C4|CG-BARHDFAMILIA|BB||1~4~0||N@93C5F027D9C04F3AB6392149BFF8ED211049",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "693.57",
+                          "allotment": 1,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        }
+                      ]
+                    },
+                    {
+                      "paymentType": "AT_WEB",
+                      "boardCode": "DB",
+                      "boardName": "BUFFET BREAKFAST",
+                      "rooms": 1,
+                      "adults": 4,
+                      "children": 0,
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170913|20170918|W|102|3562|FAM.C4|CG-BARFAMILIAR|DB||1~4~0||N@93C5F027D9C04F3AB6392149BFF8ED211049",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "735.62",
+                          "allotment": 1,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "minRate": "525.42",
+              "maxRate": "735.62",
+              "currency": "EUR"
+            }
+          ],
+          "checkIn": "2017-09-15",
+          "total": 1,
+          "checkOut": "2017-09-20"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "auditData": {
+          "$ref": "#/definitions/AuditData"
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels29"
+        }
+      },
+      "required": [
+        "auditData",
+        "hotels"
+      ]
+    },
+    "Hotels29": {
+      "title": "Hotels29",
+      "type": "object",
+      "properties": {
+        "hotels": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hotels30"
+          }
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "total": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hotels",
+        "checkIn",
+        "total",
+        "checkOut"
+      ]
+    },
+    "Hotels30": {
+      "title": "Hotels30",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryCode": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryName": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationCode": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationName": {
+          "description": "",
+          "type": "string"
+        },
+        "zoneCode": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "zoneName": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Room31"
+          }
+        },
+        "minRate": {
+          "description": "",
+          "type": "string"
+        },
+        "maxRate": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "categoryCode",
+        "categoryName",
+        "destinationCode",
+        "destinationName",
+        "zoneCode",
+        "zoneName",
+        "latitude",
+        "longitude",
+        "rooms",
+        "minRate",
+        "maxRate",
+        "currency"
+      ]
+    },
+    "Room31": {
+      "title": "Room31",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "rates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rate32"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "rates"
+      ]
+    },
+    "Rate32": {
+      "title": "Rate32",
+      "type": "object",
+      "properties": {
+        "paymentType": {
+          "description": "",
+          "type": "string"
+        },
+        "boardCode": {
+          "description": "",
+          "type": "string"
+        },
+        "boardName": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "adults": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "children": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "shiftRates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ShiftRate"
+          }
+        }
+      },
+      "required": [
+        "paymentType",
+        "boardCode",
+        "boardName",
+        "rooms",
+        "adults",
+        "children",
+        "shiftRates"
+      ]
+    },
+    "FilterByRoomTyperequest": {
+      "title": "Filter by room typeRequest",
+      "example": {
+        "stay": {
+          "checkIn": "2017-11-15",
+          "checkOut": "2017-11-20",
+          "shiftDays": "2"
+        },
+        "occupancies": [
+          {
+            "rooms": 1,
+            "adults": 2,
+            "children": 0
+          }
+        ],
+        "hotels": {
+          "hotel": [
+            1,
+            271
+          ]
+        },
+        "rooms": {
+          "included": true,
+          "room": [
+            "DBT.ST"
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "stay": {
+          "$ref": "#/definitions/Stay13"
+        },
+        "occupancies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Occupancy"
+          }
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels"
+        },
+        "rooms": {
+          "$ref": "#/definitions/Rooms"
+        }
+      },
+      "required": [
+        "stay",
+        "occupancies",
+        "hotels",
+        "rooms"
+      ]
+    },
+    "Rooms": {
+      "title": "Rooms",
+      "type": "object",
+      "properties": {
+        "included": {
+          "description": "",
+          "type": "boolean"
+        },
+        "room": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "included",
+        "room"
+      ]
+    },
+    "FilterByKeywordrequest": {
+      "title": "Filter by keywordRequest",
+      "example": {
+        "stay": {
+          "checkIn": "2017-11-15",
+          "checkOut": "2017-11-20",
+          "shiftDays": "2"
+        },
+        "occupancies": [
+          {
+            "rooms": 1,
+            "adults": 1,
+            "children": 0
+          }
+        ],
+        "hotels": {
+          "hotel": [
+            1,
+            271
+          ]
+        },
+        "keywords": {
+          "keyword": [
+            34,
+            38,
+            100
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "stay": {
+          "$ref": "#/definitions/Stay13"
+        },
+        "occupancies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Occupancy"
+          }
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels"
+        },
+        "keywords": {
+          "$ref": "#/definitions/Keywords"
+        }
+      },
+      "required": [
+        "stay",
+        "occupancies",
+        "hotels",
+        "keywords"
+      ]
+    },
+    "Keywords": {
+      "title": "Keywords",
+      "type": "object",
+      "properties": {
+        "keyword": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "required": [
+        "keyword"
+      ]
+    },
+    "FilterByAccommodationTyperequest": {
+      "title": "Filter by accommodation typeRequest",
+      "example": {
+        "stay": {
+          "checkIn": "2017-11-15",
+          "checkOut": "2017-11-20",
+          "shiftDays": "2"
+        },
+        "occupancies": [
+          {
+            "rooms": 1,
+            "adults": 1,
+            "children": 0
+          }
+        ],
+        "hotels": {
+          "hotel": [
+            1,
+            271
+          ]
+        },
+        "accommodations": [
+          "HOTEL",
+          "HOSTEL"
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "stay": {
+          "$ref": "#/definitions/Stay13"
+        },
+        "occupancies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Occupancy"
+          }
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels"
+        },
+        "accommodations": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "stay",
+        "occupancies",
+        "hotels",
+        "accommodations"
+      ]
+    },
+    "FilterByBoardCoderequest": {
+      "title": "Filter by board codeRequest",
+      "example": {
+        "stay": {
+          "checkIn": "2017-11-15",
+          "checkOut": "2017-11-20",
+          "shiftDays": "2"
+        },
+        "occupancies": [
+          {
+            "rooms": 1,
+            "adults": 1,
+            "children": 0
+          }
+        ],
+        "hotels": {
+          "hotel": [
+            1,
+            271
+          ]
+        },
+        "boards": {
+          "included": true,
+          "board": [
+            "RO",
+            "BB"
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "stay": {
+          "$ref": "#/definitions/Stay13"
+        },
+        "occupancies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Occupancy"
+          }
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels"
+        },
+        "boards": {
+          "$ref": "#/definitions/Boards"
+        }
+      },
+      "required": [
+        "stay",
+        "occupancies",
+        "hotels",
+        "boards"
+      ]
+    },
+    "Boards": {
+      "title": "Boards",
+      "type": "object",
+      "properties": {
+        "included": {
+          "description": "",
+          "type": "boolean"
+        },
+        "board": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "included",
+        "board"
+      ]
+    },
+    "FilterByReviewRatingrequest": {
+      "title": "Filter by review ratingRequest",
+      "example": {
+        "stay": {
+          "checkIn": "2017-11-15",
+          "checkOut": "2017-11-20",
+          "shiftDays": "2"
+        },
+        "occupancies": [
+          {
+            "rooms": 1,
+            "adults": 1,
+            "children": 0
+          }
+        ],
+        "hotels": {
+          "hotel": [
+            1,
+            271
+          ]
+        },
+        "reviews": [
+          {
+            "type": "HOTELBEDS",
+            "maxRate": 5,
+            "minRate": 1,
+            "minReviewCount": 3
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "stay": {
+          "$ref": "#/definitions/Stay13"
+        },
+        "occupancies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Occupancy"
+          }
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels"
+        },
+        "reviews": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Review"
+          }
+        }
+      },
+      "required": [
+        "stay",
+        "occupancies",
+        "hotels",
+        "reviews"
+      ]
+    },
+    "Review": {
+      "title": "Review",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "",
+          "type": "string"
+        },
+        "maxRate": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "minRate": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "minReviewCount": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "type",
+        "maxRate",
+        "minRate",
+        "minReviewCount"
+      ]
+    },
+    "FilterByReviewRatingresponse": {
+      "title": "Filter by review ratingResponse",
+      "example": {
+        "auditData": {
+          "processTime": "42",
+          "timestamp": "2017-08-30 14:46:02.533",
+          "requestHost": "212.170.239.110",
+          "serverId": "sa37AUX3ROLBLIS.env#PL",
+          "environment": "[int]",
+          "release": "4c0c21f7a3982f3ad0cf88b921c4e04e7c36861f",
+          "token": "1534a87d-c8a6-4e12-9de9-d01e46b3f3ac",
+          "internal": "0|DCF3106D92A441F2918E1CEF9F65E2AF1446|BR|06|1|25||||||||||||1||1~1~2~1||0||0|wuupfvswdqfz342cejxfv3ku||"
+        },
+        "hotels": {
+          "hotels": [
+            {
+              "code": 1,
+              "name": "Villa Dorada",
+              "categoryCode": "3EST",
+              "categoryName": "3 STARS",
+              "destinationCode": "SAL",
+              "destinationName": "Salou Area / Costa Dorada",
+              "zoneCode": 10,
+              "zoneName": "Salou",
+              "latitude": "41.06865947991072",
+              "longitude": "1.1524744666303377",
+              "rooms": [
+                {
+                  "code": "DBT.ST-1",
+                  "name": "Double or Twin 2 ADULTS 1 CHILD",
+                  "rates": [
+                    {
+                      "rateKey": "20170915|20170920|W|52|1|DBT.ST-1|CG-EXT LONG RO|RO||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "308.59",
+                      "allotment": 50,
+                      "rateCommentsId": "52|83709|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "RO",
+                      "boardName": "ROOM ONLY",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "77.95",
+                          "from": "2017-09-12T21:59:00+00:00"
+                        },
+                        {
+                          "amount": "155.90",
+                          "from": "2017-09-14T21:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 2,
+                      "children": 1,
+                      "childrenAges": "2",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170913|20170918|W|52|1|DBT.ST-1|CG-EXT LONG RO|RO||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "349.17",
+                          "allotment": 50,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|52|1|DBT.ST-1|CG-EXT LONG RO|RO||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "328.88",
+                          "allotment": 50,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        },
+                        {
+                          "rateKey": "20170917|20170922|W|52|1|DBT.ST-1|CG-EXT LONG RO|RO||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "288.30",
+                          "allotment": 55,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        },
+                        {
+                          "rateKey": "20170916|20170921|W|52|1|DBT.ST-1|CG-EXT LONG RO|RO||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "288.30",
+                          "allotment": 50,
+                          "checkIn": "2017-09-16",
+                          "checkOut": "2017-09-21"
+                        }
+                      ]
+                    },
+                    {
+                      "rateKey": "20170915|20170920|W|52|1|DBT.ST-1|CG-EXT LONG BB|BB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "319.29",
+                      "allotment": 50,
+                      "rateCommentsId": "52|83711|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "BB",
+                      "boardName": "BED AND BREAKFAST",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "80.09",
+                          "from": "2017-09-12T21:59:00+00:00"
+                        },
+                        {
+                          "amount": "160.18",
+                          "from": "2017-09-14T21:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 2,
+                      "children": 1,
+                      "childrenAges": "2",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170913|20170918|W|52|1|DBT.ST-1|CG-EXT LONG BB|BB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "359.87",
+                          "allotment": 50,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|52|1|DBT.ST-1|CG-EXT LONG BB|BB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "339.58",
+                          "allotment": 50,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        },
+                        {
+                          "rateKey": "20170917|20170922|W|52|1|DBT.ST-1|CG-EXT LONG BB|BB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "299.00",
+                          "allotment": 55,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        },
+                        {
+                          "rateKey": "20170916|20170921|W|52|1|DBT.ST-1|CG-EXT LONG BB|BB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "299.00",
+                          "allotment": 50,
+                          "checkIn": "2017-09-16",
+                          "checkOut": "2017-09-21"
+                        }
+                      ]
+                    },
+                    {
+                      "rateKey": "20170915|20170920|W|52|1|DBT.ST-1|CG-EXT LONG HB|HB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "340.64",
+                      "allotment": 50,
+                      "rateCommentsId": "52|83713|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "HB",
+                      "boardName": "HALF BOARD",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "84.36",
+                          "from": "2017-09-12T21:59:00+00:00"
+                        },
+                        {
+                          "amount": "168.72",
+                          "from": "2017-09-14T21:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 2,
+                      "children": 1,
+                      "childrenAges": "2",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170913|20170918|W|52|1|DBT.ST-1|CG-EXT LONG HB|HB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "381.22",
+                          "allotment": 50,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|52|1|DBT.ST-1|CG-EXT LONG HB|HB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "360.93",
+                          "allotment": 50,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        },
+                        {
+                          "rateKey": "20170917|20170922|W|52|1|DBT.ST-1|CG-EXT LONG HB|HB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "320.35",
+                          "allotment": 55,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        },
+                        {
+                          "rateKey": "20170916|20170921|W|52|1|DBT.ST-1|CG-EXT LONG HB|HB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "320.35",
+                          "allotment": 50,
+                          "checkIn": "2017-09-16",
+                          "checkOut": "2017-09-21"
+                        }
+                      ]
+                    },
+                    {
+                      "rateKey": "20170915|20170920|W|52|1|DBT.ST-1|CG-EXT LONG FB|FB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "426.08",
+                      "allotment": 50,
+                      "rateCommentsId": "52|83715|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "FB",
+                      "boardName": "FULL BOARD",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "101.44",
+                          "from": "2017-09-12T21:59:00+00:00"
+                        },
+                        {
+                          "amount": "202.88",
+                          "from": "2017-09-14T21:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 2,
+                      "children": 1,
+                      "childrenAges": "2",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170913|20170918|W|52|1|DBT.ST-1|CG-EXT LONG FB|FB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "466.64",
+                          "allotment": 50,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|52|1|DBT.ST-1|CG-EXT LONG FB|FB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "446.36",
+                          "allotment": 50,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        },
+                        {
+                          "rateKey": "20170917|20170922|W|52|1|DBT.ST-1|CG-EXT LONG FB|FB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "405.80",
+                          "allotment": 55,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        },
+                        {
+                          "rateKey": "20170916|20170921|W|52|1|DBT.ST-1|CG-EXT LONG FB|FB||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "405.80",
+                          "allotment": 50,
+                          "checkIn": "2017-09-16",
+                          "checkOut": "2017-09-21"
+                        }
+                      ]
+                    },
+                    {
+                      "rateKey": "20170915|20170920|W|52|1|DBT.ST-1|CG-EXT LONG AI|AI||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "575.54",
+                      "allotment": 50,
+                      "rateCommentsId": "52|83717|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "AI",
+                      "boardName": "ALL INCLUSIVE",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "131.34",
+                          "from": "2017-09-12T21:59:00+00:00"
+                        },
+                        {
+                          "amount": "262.68",
+                          "from": "2017-09-14T21:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 2,
+                      "children": 1,
+                      "childrenAges": "2",
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170913|20170918|W|52|1|DBT.ST-1|CG-EXT LONG AI|AI||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "616.12",
+                          "allotment": 50,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|52|1|DBT.ST-1|CG-EXT LONG AI|AI||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "595.83",
+                          "allotment": 50,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        },
+                        {
+                          "rateKey": "20170917|20170922|W|52|1|DBT.ST-1|CG-EXT LONG AI|AI||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "555.25",
+                          "allotment": 55,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        },
+                        {
+                          "rateKey": "20170916|20170921|W|52|1|DBT.ST-1|CG-EXT LONG AI|AI||1~2~1|2|N@DCF3106D92A441F2918E1CEF9F65E2AF1446",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "555.25",
+                          "allotment": 50,
+                          "checkIn": "2017-09-16",
+                          "checkOut": "2017-09-21"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "minRate": "288.30",
+              "maxRate": "616.12",
+              "currency": "EUR"
+            }
+          ],
+          "checkIn": "2017-09-15",
+          "total": 1,
+          "checkOut": "2017-09-20"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "auditData": {
+          "$ref": "#/definitions/AuditData"
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels60"
+        }
+      },
+      "required": [
+        "auditData",
+        "hotels"
+      ]
+    },
+    "Hotels60": {
+      "title": "Hotels60",
+      "type": "object",
+      "properties": {
+        "hotels": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hotels61"
+          }
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "total": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hotels",
+        "checkIn",
+        "total",
+        "checkOut"
+      ]
+    },
+    "Hotels61": {
+      "title": "Hotels61",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryCode": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryName": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationCode": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationName": {
+          "description": "",
+          "type": "string"
+        },
+        "zoneCode": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "zoneName": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rooms62"
+          }
+        },
+        "minRate": {
+          "description": "",
+          "type": "string"
+        },
+        "maxRate": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "categoryCode",
+        "categoryName",
+        "destinationCode",
+        "destinationName",
+        "zoneCode",
+        "zoneName",
+        "latitude",
+        "longitude",
+        "rooms",
+        "minRate",
+        "maxRate",
+        "currency"
+      ]
+    },
+    "Rooms62": {
+      "title": "Rooms62",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "rates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rate63"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "rates"
+      ]
+    },
+    "Rate63": {
+      "title": "Rate63",
+      "type": "object",
+      "properties": {
+        "rateKey": {
+          "description": "",
+          "type": "string"
+        },
+        "rateClass": {
+          "description": "",
+          "type": "string"
+        },
+        "rateType": {
+          "description": "",
+          "type": "string"
+        },
+        "net": {
+          "description": "",
+          "type": "string"
+        },
+        "allotment": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "rateCommentsId": {
+          "description": "",
+          "type": "string"
+        },
+        "paymentType": {
+          "description": "",
+          "type": "string"
+        },
+        "packaging": {
+          "description": "",
+          "type": "boolean"
+        },
+        "boardCode": {
+          "description": "",
+          "type": "string"
+        },
+        "boardName": {
+          "description": "",
+          "type": "string"
+        },
+        "cancellationPolicies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CancellationPolicy"
+          }
+        },
+        "rooms": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "adults": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "children": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "childrenAges": {
+          "description": "",
+          "type": "string"
+        },
+        "shiftRates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ShiftRate"
+          }
+        }
+      },
+      "required": [
+        "rateKey",
+        "rateClass",
+        "rateType",
+        "net",
+        "allotment",
+        "rateCommentsId",
+        "paymentType",
+        "packaging",
+        "boardCode",
+        "boardName",
+        "cancellationPolicies",
+        "rooms",
+        "adults",
+        "children",
+        "childrenAges",
+        "shiftRates"
+      ]
+    },
+    "OtherFiltersrequest": {
+      "title": "Other filtersRequest",
+      "example": {
+        "stay": {
+          "checkIn": "2017-11-15",
+          "checkOut": "2017-11-20",
+          "shiftDays": "2"
+        },
+        "occupancies": [
+          {
+            "rooms": 1,
+            "adults": 1,
+            "children": 0
+          }
+        ],
+        "hotels": {
+          "hotel": [
+            1,
+            271
+          ]
+        },
+        "filter": {
+          "minRate": 100.0,
+          "maxRate": 1700.0,
+          "minCategory": 3,
+          "maxCategory": 5,
+          "maxRooms": 3,
+          "maxRatesPerRoom": 3,
+          "paymentType": "AT_HOTEL",
+          "packaging": true,
+          "hotelPackage": "YES",
+          "contract": "CG-FIT B2B"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "stay": {
+          "$ref": "#/definitions/Stay13"
+        },
+        "occupancies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Occupancy"
+          }
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels"
+        },
+        "filter": {
+          "$ref": "#/definitions/Filter"
+        }
+      },
+      "required": [
+        "stay",
+        "occupancies",
+        "hotels",
+        "filter"
+      ]
+    },
+    "Filter": {
+      "title": "Filter",
+      "type": "object",
+      "properties": {
+        "minRate": {
+          "description": "",
+          "type": "number",
+          "format": "double"
+        },
+        "maxRate": {
+          "description": "",
+          "type": "number",
+          "format": "double"
+        },
+        "minCategory": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxCategory": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxRooms": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "maxRatesPerRoom": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "paymentType": {
+          "description": "",
+          "type": "string"
+        },
+        "packaging": {
+          "description": "",
+          "type": "boolean"
+        },
+        "hotelPackage": {
+          "description": "",
+          "type": "string"
+        },
+        "contract": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "minRate",
+        "maxRate",
+        "minCategory",
+        "maxCategory",
+        "maxRooms",
+        "maxRatesPerRoom",
+        "paymentType",
+        "packaging",
+        "hotelPackage",
+        "contract"
+      ]
+    },
+    "OtherFiltersresponse": {
+      "title": "Other filtersResponse",
+      "example": {
+        "auditData": {
+          "processTime": "94",
+          "timestamp": "2017-09-08 12:47:16.646",
+          "requestHost": "212.170.239.110",
+          "serverId": "sa37AUX3ROLBLIS.env#PL",
+          "environment": "[int]",
+          "release": "23c542efb2ca3c1642f5f0d87c6c410b81c52ee3",
+          "token": "9536f01d-d2b6-40bf-ac8b-b7b8567b28cf",
+          "internal": "0||BR|01|1|2||||||||||||1||1~1~1~0||0||0|wuupfvswdqfz342cejxfv3ku||"
+        },
+        "hotels": {
+          "hotels": [
+            {
+              "code": 186629,
+              "name": "K+K Hotel Picasso",
+              "categoryCode": "4EST",
+              "categoryName": "4 STARS",
+              "destinationCode": "BCN",
+              "destinationName": "Barcelona",
+              "zoneCode": 8,
+              "zoneName": "El Born",
+              "latitude": "41.386763",
+              "longitude": "2.183858",
+              "rooms": [
+                {
+                  "code": "DBL.AS",
+                  "name": "DOUBLE CLASSIC",
+                  "rates": [
+                    {
+                      "paymentType": "AT_WEB",
+                      "boardCode": "BB",
+                      "boardName": "BED AND BREAKFAST",
+                      "rooms": 1,
+                      "adults": 1,
+                      "children": 0,
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170913|20170918|W|102|186629|DBL.AS|CG-FIT B2B|BB||1~1~0||N@6A20D3E64C4445CAB51E27C08DBEF84B1247",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "1162.65",
+                          "allotment": 1,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|102|186629|DBL.AS|CG-FIT B2B|BB||1~1~0||N@6A20D3E64C4445CAB51E27C08DBEF84B1247",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "1162.65",
+                          "allotment": 1,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "minRate": "1162.65",
+              "maxRate": "1162.65",
+              "currency": "EUR"
+            }
+          ],
+          "checkIn": "2017-09-15",
+          "total": 1,
+          "checkOut": "2017-09-20"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "auditData": {
+          "$ref": "#/definitions/AuditData"
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels73"
+        }
+      },
+      "required": [
+        "auditData",
+        "hotels"
+      ]
+    },
+    "Hotels73": {
+      "title": "Hotels73",
+      "type": "object",
+      "properties": {
+        "hotels": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hotels74"
+          }
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "total": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hotels",
+        "checkIn",
+        "total",
+        "checkOut"
+      ]
+    },
+    "Hotels74": {
+      "title": "Hotels74",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryCode": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryName": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationCode": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationName": {
+          "description": "",
+          "type": "string"
+        },
+        "zoneCode": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "zoneName": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rooms75"
+          }
+        },
+        "minRate": {
+          "description": "",
+          "type": "string"
+        },
+        "maxRate": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "categoryCode",
+        "categoryName",
+        "destinationCode",
+        "destinationName",
+        "zoneCode",
+        "zoneName",
+        "latitude",
+        "longitude",
+        "rooms",
+        "minRate",
+        "maxRate",
+        "currency"
+      ]
+    },
+    "Rooms75": {
+      "title": "Rooms75",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "rates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rate32"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "rates"
+      ]
+    },
+    "CheckRateRequest": {
+      "title": "CheckRateRequest",
+      "example": {
+        "rooms": [
+          {
+            "rateKey": "20171115|20171120|W|52|1|SGL.ST|CG-EXT LONG RO|RO||1~1~0||N@A8921A639A0D46D88735806D109FA6E81544"
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rooms79"
+          }
+        }
+      },
+      "required": [
+        "rooms"
+      ]
+    },
+    "Rooms79": {
+      "title": "Rooms79",
+      "type": "object",
+      "properties": {
+        "rateKey": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rateKey"
+      ]
+    },
+    "CheckRateResponse": {
+      "title": "CheckRateResponse",
+      "example": {
+        "auditData": {
+          "processTime": "31",
+          "timestamp": "2017-08-30 15:50:31.772",
+          "requestHost": "212.170.239.110",
+          "serverId": "sa37AUX3ROLBLIS.env#PL",
+          "environment": "[int]",
+          "release": "4c0c21f7a3982f3ad0cf88b921c4e04e7c36861f",
+          "token": "9db694ae-82c0-4f49-9c5d-307a823e961f",
+          "internal": "null|85AA606B40DC4C8DA2EB70ADEF1FB4E51545|||0|1|||||||||||R|1|1|||0||0|wuupfvswdqfz342cejxfv3ku||"
+        },
+        "hotel": {
+          "checkOut": "2017-12-20",
+          "checkIn": "2017-12-19",
+          "code": 106753,
+          "name": "Wingate By Wyndham Orlando International Airport",
+          "categoryCode": "3EST",
+          "categoryName": "3 STARS",
+          "destinationCode": "MCO",
+          "destinationName": "Orlando Area - Florida - FL",
+          "zoneCode": 2,
+          "zoneName": "Orlando International Airport",
+          "latitude": "28.4626",
+          "longitude": "-81.308",
+          "rooms": [
+            {
+              "code": "DBL.2Q",
+              "name": "DOUBLE TWO QUEEN BEDS",
+              "rates": [
+                {
+                  "rateKey": "20171219|20171220|W|235|106753|DBL.2Q|COM|DB||1~3~1|2|N@85AA606B40DC4C8DA2EB70ADEF1FB4E51545",
+                  "rateClass": "NOR",
+                  "rateType": "BOOKABLE",
+                  "net": "104.84",
+                  "rateComments": "The person whose name is on the reservation must be at least 21 years of age to check in.. Rollaway beds are available based upon availability for an additional fee, payable locally.. Resort fee has been waived for Hotelbeds guests..  . .  .  YES Car park NO.Car park YES FEE: NO.",
+                  "paymentType": "AT_WEB",
+                  "packaging": false,
+                  "boardCode": "DB",
+                  "boardName": "BUFFET BREAKFAST",
+                  "cancellationPolicies": [
+                    {
+                      "amount": "104.84",
+                      "from": "2017-12-16T04:59:00+00:00"
+                    }
+                  ],
+                  "rateBreakDown": {
+                    "rateDiscounts": [
+                      {
+                        "code": "XP",
+                        "name": "EXTRA PERSON",
+                        "amount": "-95.64"
+                      }
+                    ]
+                  },
+                  "rooms": 1,
+                  "adults": 3,
+                  "children": 1,
+                  "childrenAges": "2",
+                  "offers": [
+                    {
+                      "code": "9008",
+                      "name": "Extra bed discount",
+                      "amount": "-95.64"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "totalNet": "104.84",
+          "currency": "USD"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "auditData": {
+          "$ref": "#/definitions/AuditData"
+        },
+        "hotel": {
+          "$ref": "#/definitions/Hotel"
+        }
+      },
+      "required": [
+        "auditData",
+        "hotel"
+      ]
+    },
+    "Hotel": {
+      "title": "Hotel",
+      "type": "object",
+      "properties": {
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "code": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryCode": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryName": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationCode": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationName": {
+          "description": "",
+          "type": "string"
+        },
+        "zoneCode": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "zoneName": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rooms83"
+          }
+        },
+        "totalNet": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "checkOut",
+        "checkIn",
+        "code",
+        "name",
+        "categoryCode",
+        "categoryName",
+        "destinationCode",
+        "destinationName",
+        "zoneCode",
+        "zoneName",
+        "latitude",
+        "longitude",
+        "rooms",
+        "totalNet",
+        "currency"
+      ]
+    },
+    "Rooms83": {
+      "title": "Rooms83",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "rates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rate84"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "rates"
+      ]
+    },
+    "Rate84": {
+      "title": "Rate84",
+      "type": "object",
+      "properties": {
+        "rateKey": {
+          "description": "",
+          "type": "string"
+        },
+        "rateClass": {
+          "description": "",
+          "type": "string"
+        },
+        "rateType": {
+          "description": "",
+          "type": "string"
+        },
+        "net": {
+          "description": "",
+          "type": "string"
+        },
+        "rateComments": {
+          "description": "",
+          "type": "string"
+        },
+        "paymentType": {
+          "description": "",
+          "type": "string"
+        },
+        "packaging": {
+          "description": "",
+          "type": "boolean"
+        },
+        "boardCode": {
+          "description": "",
+          "type": "string"
+        },
+        "boardName": {
+          "description": "",
+          "type": "string"
+        },
+        "cancellationPolicies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CancellationPolicy"
+          }
+        },
+        "rateBreakDown": {
+          "$ref": "#/definitions/RateBreakDown"
+        },
+        "rooms": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "adults": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "children": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "childrenAges": {
+          "description": "",
+          "type": "string"
+        },
+        "offers": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Offer"
+          }
+        }
+      },
+      "required": [
+        "rateKey",
+        "rateClass",
+        "rateType",
+        "net",
+        "rateComments",
+        "paymentType",
+        "packaging",
+        "boardCode",
+        "boardName",
+        "cancellationPolicies",
+        "rateBreakDown",
+        "rooms",
+        "adults",
+        "children",
+        "childrenAges",
+        "offers"
+      ]
+    },
+    "RateBreakDown": {
+      "title": "RateBreakDown",
+      "type": "object",
+      "properties": {
+        "rateDiscounts": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RateDiscount"
+          }
+        }
+      },
+      "required": [
+        "rateDiscounts"
+      ]
+    },
+    "RateDiscount": {
+      "title": "RateDiscount",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "amount": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "amount"
+      ]
+    },
+    "BookingRequest": {
+      "title": "BookingRequest",
+      "example": {
+        "holder": {
+          "name": "IntegrationTestFirstName",
+          "surname": "IntegrationTestLastName"
+        },
+        "rooms": [
+          {
+            "rateKey": "20171115|20171120|W|52|1|DBL.ST|ID_B2B_25|RO|EM4TIES|1~1~0||N@1884739731",
+            "paxes": [
+              {
+                "roomId": "1",
+                "type": "AD",
+                "name": "Adult Name"
+              }
+            ]
+          }
+        ],
+        "clientReference": "IntegrationAgency"
+      },
+      "type": "object",
+      "properties": {
+        "holder": {
+          "$ref": "#/definitions/Holder"
+        },
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rooms91"
+          }
+        },
+        "clientReference": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "holder",
+        "rooms",
+        "clientReference"
+      ]
+    },
+    "Holder": {
+      "title": "Holder",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "surname": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "surname"
+      ]
+    },
+    "Rooms91": {
+      "title": "Rooms91",
+      "type": "object",
+      "properties": {
+        "rateKey": {
+          "description": "",
+          "type": "string"
+        },
+        "paxes": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Paxis"
+          }
+        }
+      },
+      "required": [
+        "rateKey",
+        "paxes"
+      ]
+    },
+    "Paxis": {
+      "title": "Paxis",
+      "type": "object",
+      "properties": {
+        "roomId": {
+          "description": "",
+          "type": "string"
+        },
+        "type": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "roomId",
+        "type",
+        "name"
+      ]
+    },
+    "BookingResponse": {
+      "title": "BookingResponse",
+      "example": {
+        "auditData": {
+          "processTime": "796",
+          "timestamp": "2017-08-31 15:40:40.244",
+          "requestHost": "212.170.239.110",
+          "serverId": "sa37AUX3ROLBLIS.env#PL",
+          "environment": "[int]",
+          "release": "23c542efb2ca3c1642f5f0d87c6c410b81c52ee3",
+          "token": "45f63673-32b7-493f-88af-3f2a060273fc",
+          "internal": "0|AB4947E0B997444E92BDD56C969894111520|BR|05|1|3|||||||AT_WEB||||R|9|2|1~2~2~0||0||0|wuupfvswdqfz342cejxfv3ku||"
+        },
+        "booking": {
+          "reference": "258-555202",
+          "clientReference": "INTEGRATIONAGENCY",
+          "creationDate": "2017-08-31",
+          "status": "CONFIRMED",
+          "modificationPolicies": {
+            "cancellation": true,
+            "modification": true
+          },
+          "creationUser": "wuupfvswdqfz342cejxfv3ku",
+          "holder": {
+            "name": "INTEGRATIONTESTFIRSTNAME",
+            "surname": "INTEGRATIONTESTLASTNAME"
+          },
+          "hotel": {
+            "checkOut": "2017-11-15",
+            "checkIn": "2017-11-14",
+            "code": 424819,
+            "name": "America Do Sul",
+            "categoryCode": "3EST",
+            "categoryName": "3 STARS",
+            "destinationCode": "SAO",
+            "destinationName": "Sao Paulo",
+            "zoneCode": 1,
+            "zoneName": "Sao Paulo - City",
+            "latitude": "-23.540438",
+            "longitude": "-46.642541",
+            "rooms": [
+              {
+                "status": "CONFIRMED",
+                "id": 1,
+                "code": "DBL.ST",
+                "name": "DOUBLE STANDARD",
+                "paxes": [
+                  {
+                    "roomId": 1,
+                    "type": "AD",
+                    "name": "First Adult Name"
+                  },
+                  {
+                    "roomId": 1,
+                    "type": "AD",
+                    "name": "Second Adult Name"
+                  },
+                  {
+                    "roomId": 2,
+                    "type": "AD",
+                    "name": "Third Adult Name"
+                  },
+                  {
+                    "roomId": 2,
+                    "type": "AD",
+                    "name": "Fourth Adult Name"
+                  }
+                ],
+                "rates": [
+                  {
+                    "rateClass": "NOR",
+                    "net": "68.04",
+                    "rateComments": "Car park NO   . Check-in hour 14:00  14:00. ",
+                    "paymentType": "AT_WEB",
+                    "packaging": false,
+                    "boardCode": "BB",
+                    "boardName": "BED AND BREAKFAST",
+                    "cancellationPolicies": [
+                      {
+                        "amount": "68.04",
+                        "from": "2017-11-11T02:59:00+00:00"
+                      }
+                    ],
+                    "rooms": 2,
+                    "adults": 2,
+                    "children": 0
+                  }
+                ]
+              }
+            ],
+            "totalNet": "68.04",
+            "currency": "USD",
+            "supplier": {
+              "name": "ADVANTOS BRASIL OPERADORA DE TURISMO, LTDA",
+              "vatNumber": "BR16847249000177"
+            }
+          },
+          "totalNet": 68.04,
+          "pendingAmount": 68.04,
+          "currency": "USD"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "auditData": {
+          "$ref": "#/definitions/AuditData"
+        },
+        "booking": {
+          "$ref": "#/definitions/Booking"
+        }
+      },
+      "required": [
+        "auditData",
+        "booking"
+      ]
+    },
+    "Booking": {
+      "title": "Booking",
+      "type": "object",
+      "properties": {
+        "reference": {
+          "description": "",
+          "type": "string"
+        },
+        "clientReference": {
+          "description": "",
+          "type": "string"
+        },
+        "creationDate": {
+          "description": "",
+          "type": "string"
+        },
+        "status": {
+          "description": "",
+          "type": "string"
+        },
+        "modificationPolicies": {
+          "$ref": "#/definitions/ModificationPolicies"
+        },
+        "creationUser": {
+          "description": "",
+          "type": "string"
+        },
+        "holder": {
+          "$ref": "#/definitions/Holder"
+        },
+        "hotel": {
+          "$ref": "#/definitions/Hotel98"
+        },
+        "totalNet": {
+          "description": "",
+          "type": "number",
+          "format": "double"
+        },
+        "pendingAmount": {
+          "description": "",
+          "type": "number",
+          "format": "double"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reference",
+        "clientReference",
+        "creationDate",
+        "status",
+        "modificationPolicies",
+        "creationUser",
+        "holder",
+        "hotel",
+        "totalNet",
+        "pendingAmount",
+        "currency"
+      ]
+    },
+    "ModificationPolicies": {
+      "title": "ModificationPolicies",
+      "type": "object",
+      "properties": {
+        "cancellation": {
+          "description": "",
+          "type": "boolean"
+        },
+        "modification": {
+          "description": "",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "cancellation",
+        "modification"
+      ]
+    },
+    "Hotel98": {
+      "title": "Hotel98",
+      "type": "object",
+      "properties": {
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "code": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryCode": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryName": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationCode": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationName": {
+          "description": "",
+          "type": "string"
+        },
+        "zoneCode": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "zoneName": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rooms99"
+          }
+        },
+        "totalNet": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        },
+        "supplier": {
+          "$ref": "#/definitions/Supplier"
+        }
+      },
+      "required": [
+        "checkOut",
+        "checkIn",
+        "code",
+        "name",
+        "categoryCode",
+        "categoryName",
+        "destinationCode",
+        "destinationName",
+        "zoneCode",
+        "zoneName",
+        "latitude",
+        "longitude",
+        "rooms",
+        "totalNet",
+        "currency",
+        "supplier"
+      ]
+    },
+    "Rooms99": {
+      "title": "Rooms99",
+      "type": "object",
+      "properties": {
+        "status": {
+          "description": "",
+          "type": "string"
+        },
+        "id": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "paxes": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Paxis100"
+          }
+        },
+        "rates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rate101"
+          }
+        }
+      },
+      "required": [
+        "status",
+        "id",
+        "code",
+        "name",
+        "paxes",
+        "rates"
+      ]
+    },
+    "Paxis100": {
+      "title": "Paxis100",
+      "type": "object",
+      "properties": {
+        "roomId": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "roomId",
+        "type",
+        "name"
+      ]
+    },
+    "Rate101": {
+      "title": "Rate101",
+      "type": "object",
+      "properties": {
+        "rateClass": {
+          "description": "",
+          "type": "string"
+        },
+        "net": {
+          "description": "",
+          "type": "string"
+        },
+        "rateComments": {
+          "description": "",
+          "type": "string"
+        },
+        "paymentType": {
+          "description": "",
+          "type": "string"
+        },
+        "packaging": {
+          "description": "",
+          "type": "boolean"
+        },
+        "boardCode": {
+          "description": "",
+          "type": "string"
+        },
+        "boardName": {
+          "description": "",
+          "type": "string"
+        },
+        "cancellationPolicies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CancellationPolicy"
+          }
+        },
+        "rooms": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "adults": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "children": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "rateClass",
+        "net",
+        "rateComments",
+        "paymentType",
+        "packaging",
+        "boardCode",
+        "boardName",
+        "cancellationPolicies",
+        "rooms",
+        "adults",
+        "children"
+      ]
+    },
+    "Supplier": {
+      "title": "Supplier",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "vatNumber": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "vatNumber"
+      ]
+    },
+    "BookingChangeRequest": {
+      "title": "BookingChangeRequest",
+      "example": {
+        "mode": "SIMULATION",
+        "booking": {
+          "reference": "52-1274417",
+          "clientReference": "INTEGRATIONAGENCY",
+          "creationDate": "2017-08-31",
+          "status": "CONFIRMED",
+          "modificationPolicies": {
+            "cancellation": true,
+            "modification": true
+          },
+          "creationUser": "wuupfvswdqfz342cejxfv3ku",
+          "holder": {
+            "name": "INTEGRATIONTESTFIRSTNAME",
+            "surname": "INTEGRATIONTESTLASTNAME"
+          },
+          "hotel": {
+            "checkOut": "2017-09-20",
+            "checkIn": "2017-09-15",
+            "code": 1,
+            "name": "Villa Dorada",
+            "categoryCode": "3EST",
+            "categoryName": "3 STARS",
+            "destinationCode": "SAL",
+            "destinationName": "Salou Area / Costa Dorada",
+            "zoneCode": 10,
+            "zoneName": "Salou",
+            "latitude": "41.06865947991072",
+            "longitude": "1.1524744666303377",
+            "rooms": [
+              {
+                "status": "CONFIRMED",
+                "id": 1,
+                "code": "DBT.ST-3",
+                "name": "Double or Twin MONOPARENTAL 1 ADULT 2 CHILDREN",
+                "paxes": [
+                  {
+                    "roomId": 1,
+                    "type": "AD",
+                    "name": "First Adult Name",
+                    "surname": "Surname"
+                  },
+                  {
+                    "roomId": 1,
+                    "type": "CH",
+                    "age": 6,
+                    "name": "Second Child Name"
+                  },
+                  {
+                    "roomId": 1,
+                    "type": "CH",
+                    "age": 5,
+                    "name": "First Child Name"
+                  }
+                ],
+                "rates": [
+                  {
+                    "rateClass": "NOR",
+                    "net": "302.26",
+                    "rateComments": "1x Double or Twin Estimated total amount of taxes & fees for this booking: 2.50 Euro   payable on arrival  \r. Car park NO   . Key Collection 14:00  00:00. Check-in hour 14:00  00:00. . This rate is not applicable to Spain, Italy & Portugal market/country or passport holders otherwise the reservation will not be accepted or supplement fees can be charged on arrival.",
+                    "paymentType": "AT_WEB",
+                    "packaging": false,
+                    "boardCode": "RO",
+                    "boardName": "ROOM ONLY",
+                    "cancellationPolicies": [
+                      {
+                        "amount": "141.00",
+                        "from": "2017-09-14T21:59:00+00:00"
+                      },
+                      {
+                        "amount": "70.50",
+                        "from": "2017-09-12T21:59:00+00:00"
+                      }
+                    ],
+                    "rooms": 1,
+                    "adults": 1,
+                    "children": 2
+                  }
+                ]
+              }
+            ],
+            "totalNet": "302.26",
+            "currency": "EUR",
+            "supplier": {
+              "name": "HOTELBEDS PRODUCT,S.L.U.",
+              "vatNumber": "ESB38877676"
+            }
+          },
+          "totalNet": 302.26,
+          "pendingAmount": 302.26,
+          "currency": "EUR"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "mode": {
+          "description": "",
+          "type": "string"
+        },
+        "booking": {
+          "$ref": "#/definitions/Booking105"
+        }
+      },
+      "required": [
+        "mode",
+        "booking"
+      ]
+    },
+    "Booking105": {
+      "title": "Booking105",
+      "type": "object",
+      "properties": {
+        "reference": {
+          "description": "",
+          "type": "string"
+        },
+        "clientReference": {
+          "description": "",
+          "type": "string"
+        },
+        "creationDate": {
+          "description": "",
+          "type": "string"
+        },
+        "status": {
+          "description": "",
+          "type": "string"
+        },
+        "modificationPolicies": {
+          "$ref": "#/definitions/ModificationPolicies"
+        },
+        "creationUser": {
+          "description": "",
+          "type": "string"
+        },
+        "holder": {
+          "$ref": "#/definitions/Holder"
+        },
+        "hotel": {
+          "$ref": "#/definitions/Hotel108"
+        },
+        "totalNet": {
+          "description": "",
+          "type": "number",
+          "format": "double"
+        },
+        "pendingAmount": {
+          "description": "",
+          "type": "number",
+          "format": "double"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "reference",
+        "clientReference",
+        "creationDate",
+        "status",
+        "modificationPolicies",
+        "creationUser",
+        "holder",
+        "hotel",
+        "totalNet",
+        "pendingAmount",
+        "currency"
+      ]
+    },
+    "Hotel108": {
+      "title": "Hotel108",
+      "type": "object",
+      "properties": {
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "code": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryCode": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryName": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationCode": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationName": {
+          "description": "",
+          "type": "string"
+        },
+        "zoneCode": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "zoneName": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rooms109"
+          }
+        },
+        "totalNet": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        },
+        "supplier": {
+          "$ref": "#/definitions/Supplier"
+        }
+      },
+      "required": [
+        "checkOut",
+        "checkIn",
+        "code",
+        "name",
+        "categoryCode",
+        "categoryName",
+        "destinationCode",
+        "destinationName",
+        "zoneCode",
+        "zoneName",
+        "latitude",
+        "longitude",
+        "rooms",
+        "totalNet",
+        "currency",
+        "supplier"
+      ]
+    },
+    "Rooms109": {
+      "title": "Rooms109",
+      "type": "object",
+      "properties": {
+        "status": {
+          "description": "",
+          "type": "string"
+        },
+        "id": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "paxes": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Paxis110"
+          }
+        },
+        "rates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rate101"
+          }
+        }
+      },
+      "required": [
+        "status",
+        "id",
+        "code",
+        "name",
+        "paxes",
+        "rates"
+      ]
+    },
+    "Paxis110": {
+      "title": "Paxis110",
+      "type": "object",
+      "properties": {
+        "roomId": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "surname": {
+          "description": "",
+          "type": "string"
+        },
+        "age": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "roomId",
+        "type",
+        "name"
+      ]
+    },
+    "BookingChangeResponse": {
+      "title": "BookingChangeResponse",
+      "example": {
+        "auditData": {
+          "processTime": "3089",
+          "timestamp": "2017-08-31 15:44:45.703",
+          "requestHost": "212.170.239.110",
+          "serverId": "sa37AUX3ROLBLIS.env#PL",
+          "environment": "[int]",
+          "release": "23c542efb2ca3c1642f5f0d87c6c410b81c52ee3",
+          "token": "46b59f25-9ea3-4824-a679-e10352d5787b",
+          "internal": "null||||0|0||||||||||||0||||0||0|wuupfvswdqfz342cejxfv3ku||"
+        },
+        "booking": {
+          "reference": "258-555202",
+          "clientReference": "INTEGRATIONAGENCY",
+          "creationDate": "2017-08-31",
+          "status": "CONFIRMED",
+          "modificationPolicies": {
+            "cancellation": true,
+            "modification": true
+          },
+          "creationUser": "wuupfvswdqfz342cejxfv3ku",
+          "holder": {
+            "name": "INTEGRATIONTESTFIRSTNAME",
+            "surname": "INTEGRATIONTESTLASTNAME"
+          },
+          "hotel": {
+            "checkOut": "2017-11-15",
+            "checkIn": "2017-11-14",
+            "code": 424819,
+            "name": "America Do Sul",
+            "categoryCode": "3EST",
+            "categoryName": "3 STARS",
+            "destinationCode": "SAO",
+            "destinationName": "Sao Paulo",
+            "zoneCode": 1,
+            "zoneName": "Sao Paulo - City",
+            "latitude": "-23.540438",
+            "longitude": "-46.642541",
+            "rooms": [
+              {
+                "status": "CONFIRMED",
+                "id": 1,
+                "code": "DBL.ST",
+                "name": "DOUBLE STANDARD",
+                "paxes": [
+                  {
+                    "roomId": 1,
+                    "type": "AD",
+                    "name": "Second Adult Name"
+                  },
+                  {
+                    "roomId": 1,
+                    "type": "AD",
+                    "name": "First Adult Name"
+                  }
+                ],
+                "rates": [
+                  {
+                    "rateClass": "NOR",
+                    "net": "34.02",
+                    "rateComments": "Car park NO   . Check-in hour 14:00  14:00. ",
+                    "paymentType": "AT_WEB",
+                    "packaging": false,
+                    "boardCode": "BB",
+                    "boardName": "BED AND BREAKFAST",
+                    "cancellationPolicies": [
+                      {
+                        "amount": "34.02",
+                        "from": "2017-11-11T02:59:00+00:00"
+                      }
+                    ],
+                    "rooms": 1,
+                    "adults": 2,
+                    "children": 0
+                  }
+                ]
+              }
+            ],
+            "totalNet": "34.02",
+            "currency": "USD",
+            "supplier": {
+              "name": "ADVANTOS BRASIL OPERADORA DE TURISMO, LTDA",
+              "vatNumber": "BR16847249000177"
+            }
+          },
+          "totalNet": 34.02,
+          "pendingAmount": 34.02,
+          "currency": "USD"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "auditData": {
+          "$ref": "#/definitions/AuditData"
+        },
+        "booking": {
+          "$ref": "#/definitions/Booking"
+        }
+      },
+      "required": [
+        "auditData",
+        "booking"
+      ]
+    }
+  }
+}
