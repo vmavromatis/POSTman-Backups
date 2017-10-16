@@ -1,0 +1,1331 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "APItude Simple",
+    "description": "APItude complete postman collection, with both BookingAPI & ContentAPI. You have the full details of our API in our developer portal:\r\nhttps://developer.hotelbeds.com/docs?hotel",
+    "license": {
+      "name": "MIT",
+      "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+    }
+  },
+  "host": "example.com",
+  "basePath": "/hotel-api/1.0",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/hotels": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "Availability by hotel code",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Availability by hotel code",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AvailabilityByHotelCoderequest"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Api-key",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Signature",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Accept-Encoding",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AvailabilityByHotelCoderesponse"
+            },
+            "examples": {
+              "application/json": {
+                "auditData": {
+                  "processTime": "1927",
+                  "timestamp": "2017-08-28 16:41:44.001",
+                  "requestHost": "212.170.239.110",
+                  "serverId": "sa37AUX3ROLBLIS.env#PL",
+                  "environment": "[int]",
+                  "release": "4c0c21f7a3982f3ad0cf88b921c4e04e7c36861f",
+                  "token": "e5835c5f-9dc5-4036-94d8-ab6692584000",
+                  "internal": "0|F35C1EBDD07F480E88392EC22E63A58B1641|BR|06|1|25||||||||||||1||1~1~2~0||0||0|wuupfvswdqfz342cejxfv3ku||"
+                },
+                "hotels": {
+                  "hotels": [
+                    {
+                      "code": 1,
+                      "name": "Villa Dorada",
+                      "categoryCode": "3EST",
+                      "categoryName": "3 STARS",
+                      "destinationCode": "SAL",
+                      "destinationName": "Salou Area / Costa Dorada",
+                      "zoneCode": 10,
+                      "zoneName": "Salou",
+                      "latitude": "41.06865947991072",
+                      "longitude": "1.1524744666303377",
+                      "rooms": [
+                        {
+                          "code": "DBT.ST",
+                          "name": "Double or Twin 2 ADULTS",
+                          "rates": [
+                            {
+                              "rateKey": "20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                              "rateClass": "NOR",
+                              "rateType": "BOOKABLE",
+                              "net": "308.59",
+                              "allotment": 50,
+                              "rateCommentsId": "52|83709|0",
+                              "paymentType": "AT_WEB",
+                              "packaging": false,
+                              "boardCode": "RO",
+                              "boardName": "ROOM ONLY",
+                              "cancellationPolicies": [
+                                {
+                                  "amount": "77.95",
+                                  "from": "2017-09-12T21:59:00+00:00"
+                                },
+                                {
+                                  "amount": "155.90",
+                                  "from": "2017-09-14T21:59:00+00:00"
+                                }
+                              ],
+                              "rooms": 1,
+                              "adults": 2,
+                              "children": 0,
+                              "shiftRates": [
+                                {
+                                  "rateKey": "20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "288.30",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-16",
+                                  "checkOut": "2017-09-21"
+                                },
+                                {
+                                  "rateKey": "20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "349.17",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-13",
+                                  "checkOut": "2017-09-18"
+                                },
+                                {
+                                  "rateKey": "20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "328.88",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-14",
+                                  "checkOut": "2017-09-19"
+                                },
+                                {
+                                  "rateKey": "20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "288.30",
+                                  "allotment": 55,
+                                  "checkIn": "2017-09-17",
+                                  "checkOut": "2017-09-22"
+                                }
+                              ]
+                            },
+                            {
+                              "rateKey": "20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                              "rateClass": "NOR",
+                              "rateType": "BOOKABLE",
+                              "net": "319.29",
+                              "allotment": 50,
+                              "rateCommentsId": "52|83711|0",
+                              "paymentType": "AT_WEB",
+                              "packaging": false,
+                              "boardCode": "BB",
+                              "boardName": "BED AND BREAKFAST",
+                              "cancellationPolicies": [
+                                {
+                                  "amount": "80.09",
+                                  "from": "2017-09-12T21:59:00+00:00"
+                                },
+                                {
+                                  "amount": "160.18",
+                                  "from": "2017-09-14T21:59:00+00:00"
+                                }
+                              ],
+                              "rooms": 1,
+                              "adults": 2,
+                              "children": 0,
+                              "shiftRates": [
+                                {
+                                  "rateKey": "20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "299.00",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-16",
+                                  "checkOut": "2017-09-21"
+                                },
+                                {
+                                  "rateKey": "20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "359.87",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-13",
+                                  "checkOut": "2017-09-18"
+                                },
+                                {
+                                  "rateKey": "20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "339.58",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-14",
+                                  "checkOut": "2017-09-19"
+                                },
+                                {
+                                  "rateKey": "20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "299.00",
+                                  "allotment": 55,
+                                  "checkIn": "2017-09-17",
+                                  "checkOut": "2017-09-22"
+                                }
+                              ]
+                            },
+                            {
+                              "rateKey": "20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                              "rateClass": "NOR",
+                              "rateType": "BOOKABLE",
+                              "net": "340.64",
+                              "allotment": 50,
+                              "rateCommentsId": "52|83713|0",
+                              "paymentType": "AT_WEB",
+                              "packaging": false,
+                              "boardCode": "HB",
+                              "boardName": "HALF BOARD",
+                              "cancellationPolicies": [
+                                {
+                                  "amount": "84.36",
+                                  "from": "2017-09-12T21:59:00+00:00"
+                                },
+                                {
+                                  "amount": "168.72",
+                                  "from": "2017-09-14T21:59:00+00:00"
+                                }
+                              ],
+                              "rooms": 1,
+                              "adults": 2,
+                              "children": 0,
+                              "shiftRates": [
+                                {
+                                  "rateKey": "20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "320.35",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-16",
+                                  "checkOut": "2017-09-21"
+                                },
+                                {
+                                  "rateKey": "20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "381.22",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-13",
+                                  "checkOut": "2017-09-18"
+                                },
+                                {
+                                  "rateKey": "20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "360.93",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-14",
+                                  "checkOut": "2017-09-19"
+                                },
+                                {
+                                  "rateKey": "20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "320.35",
+                                  "allotment": 55,
+                                  "checkIn": "2017-09-17",
+                                  "checkOut": "2017-09-22"
+                                }
+                              ]
+                            },
+                            {
+                              "rateKey": "20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                              "rateClass": "NOR",
+                              "rateType": "BOOKABLE",
+                              "net": "426.08",
+                              "allotment": 50,
+                              "rateCommentsId": "52|83715|0",
+                              "paymentType": "AT_WEB",
+                              "packaging": false,
+                              "boardCode": "FB",
+                              "boardName": "FULL BOARD",
+                              "cancellationPolicies": [
+                                {
+                                  "amount": "101.44",
+                                  "from": "2017-09-12T21:59:00+00:00"
+                                },
+                                {
+                                  "amount": "202.88",
+                                  "from": "2017-09-14T21:59:00+00:00"
+                                }
+                              ],
+                              "rooms": 1,
+                              "adults": 2,
+                              "children": 0,
+                              "shiftRates": [
+                                {
+                                  "rateKey": "20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "405.80",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-16",
+                                  "checkOut": "2017-09-21"
+                                },
+                                {
+                                  "rateKey": "20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "466.64",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-13",
+                                  "checkOut": "2017-09-18"
+                                },
+                                {
+                                  "rateKey": "20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "446.36",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-14",
+                                  "checkOut": "2017-09-19"
+                                },
+                                {
+                                  "rateKey": "20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "405.80",
+                                  "allotment": 55,
+                                  "checkIn": "2017-09-17",
+                                  "checkOut": "2017-09-22"
+                                }
+                              ]
+                            },
+                            {
+                              "rateKey": "20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                              "rateClass": "NOR",
+                              "rateType": "BOOKABLE",
+                              "net": "511.49",
+                              "allotment": 50,
+                              "rateCommentsId": "52|83717|0",
+                              "paymentType": "AT_WEB",
+                              "packaging": false,
+                              "boardCode": "AI",
+                              "boardName": "ALL INCLUSIVE",
+                              "cancellationPolicies": [
+                                {
+                                  "amount": "118.53",
+                                  "from": "2017-09-12T21:59:00+00:00"
+                                },
+                                {
+                                  "amount": "237.06",
+                                  "from": "2017-09-14T21:59:00+00:00"
+                                }
+                              ],
+                              "rooms": 1,
+                              "adults": 2,
+                              "children": 0,
+                              "shiftRates": [
+                                {
+                                  "rateKey": "20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "491.20",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-16",
+                                  "checkOut": "2017-09-21"
+                                },
+                                {
+                                  "rateKey": "20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "552.07",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-13",
+                                  "checkOut": "2017-09-18"
+                                },
+                                {
+                                  "rateKey": "20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "531.78",
+                                  "allotment": 50,
+                                  "checkIn": "2017-09-14",
+                                  "checkOut": "2017-09-19"
+                                },
+                                {
+                                  "rateKey": "20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                                  "rateClass": "NOR",
+                                  "rateType": "BOOKABLE",
+                                  "net": "491.20",
+                                  "allotment": 55,
+                                  "checkIn": "2017-09-17",
+                                  "checkOut": "2017-09-22"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "minRate": "288.30",
+                      "maxRate": "552.07",
+                      "currency": "EUR"
+                    }
+                  ],
+                  "checkIn": "2017-09-15",
+                  "total": 1,
+                  "checkOut": "2017-09-20"
+                }
+              }
+            }
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/hotels",
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Api-key": "{{Api-key}}",
+                "X-Signature": "{{X-Signature}}",
+                "Accept-Encoding": "gzip"
+              },
+              "body": "{\n  \"stay\": {\n    \"checkIn\": \"2017-11-15\",\n    \"checkOut\": \"2017-11-20\"\n  },\n  \"occupancies\": [{\n    \"rooms\": 1,\n    \"adults\": 1,\n    \"children\": 0\n  }],\n  \"hotels\": {\n    \"hotel\": [1,\n    271]\n  }\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "RAW",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {
+                "Access-Control-Allow-Headers": "x-requested-with, Content-Type, Api-Key",
+                "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Max-Age": "3600",
+                "Connection": "keep-alive",
+                "Content-Encoding": "gzip",
+                "Content-Length": "1338",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Date": "Mon, 28 Aug 2017 14:41:42 GMT",
+                "Server": "Jetty(9.2.16.v20160414)",
+                "Vary": "Accept-Encoding",
+                "X-Application-Context": "hotel-booking-api:int:8383",
+                "X-Mashery-Responder": "prod-j-worker-eu-west-1c-61.mashery.com",
+                "X-Plan-QPS-Allotted": "4",
+                "X-Plan-QPS-Current": "1",
+                "X-Plan-Quota-Allotted": "50000",
+                "X-Plan-Quota-Current": "89",
+                "X-Plan-Quota-Reset": "Tuesday, August 29, 2017 12:00:00 AM GMT",
+                "X-PlanMethod-QPS-Allotted": "3",
+                "X-PlanMethod-QPS-Current": "1"
+              },
+              "body": "{\"auditData\":{\"processTime\":\"1927\",\"timestamp\":\"2017-08-28 16:41:44.001\",\"requestHost\":\"212.170.239.110\",\"serverId\":\"sa37AUX3ROLBLIS.env#PL\",\"environment\":\"[int]\",\"release\":\"4c0c21f7a3982f3ad0cf88b921c4e04e7c36861f\",\"token\":\"e5835c5f-9dc5-4036-94d8-ab6692584000\",\"internal\":\"0|F35C1EBDD07F480E88392EC22E63A58B1641|BR|06|1|25||||||||||||1||1~1~2~0||0||0|wuupfvswdqfz342cejxfv3ku||\"},\"hotels\":{\"hotels\":[{\"code\":1,\"name\":\"Villa Dorada\",\"categoryCode\":\"3EST\",\"categoryName\":\"3 STARS\",\"destinationCode\":\"SAL\",\"destinationName\":\"Salou Area / Costa Dorada\",\"zoneCode\":10,\"zoneName\":\"Salou\",\"latitude\":\"41.06865947991072\",\"longitude\":\"1.1524744666303377\",\"rooms\":[{\"code\":\"DBT.ST\",\"name\":\"Double or Twin 2 ADULTS\",\"rates\":[{\"rateKey\":\"20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"308.59\",\"allotment\":50,\"rateCommentsId\":\"52|83709|0\",\"paymentType\":\"AT_WEB\",\"packaging\":false,\"boardCode\":\"RO\",\"boardName\":\"ROOM ONLY\",\"cancellationPolicies\":[{\"amount\":\"77.95\",\"from\":\"2017-09-12T23:59:00+02:00\"},{\"amount\":\"155.90\",\"from\":\"2017-09-14T23:59:00+02:00\"}],\"rooms\":1,\"adults\":2,\"children\":0,\"shiftRates\":[{\"rateKey\":\"20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"288.30\",\"allotment\":50,\"checkIn\":\"2017-09-16\",\"checkOut\":\"2017-09-21\"},{\"rateKey\":\"20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"349.17\",\"allotment\":50,\"checkIn\":\"2017-09-13\",\"checkOut\":\"2017-09-18\"},{\"rateKey\":\"20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"328.88\",\"allotment\":50,\"checkIn\":\"2017-09-14\",\"checkOut\":\"2017-09-19\"},{\"rateKey\":\"20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"288.30\",\"allotment\":55,\"checkIn\":\"2017-09-17\",\"checkOut\":\"2017-09-22\"}]},{\"rateKey\":\"20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"319.29\",\"allotment\":50,\"rateCommentsId\":\"52|83711|0\",\"paymentType\":\"AT_WEB\",\"packaging\":false,\"boardCode\":\"BB\",\"boardName\":\"BED AND BREAKFAST\",\"cancellationPolicies\":[{\"amount\":\"80.09\",\"from\":\"2017-09-12T23:59:00+02:00\"},{\"amount\":\"160.18\",\"from\":\"2017-09-14T23:59:00+02:00\"}],\"rooms\":1,\"adults\":2,\"children\":0,\"shiftRates\":[{\"rateKey\":\"20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"299.00\",\"allotment\":50,\"checkIn\":\"2017-09-16\",\"checkOut\":\"2017-09-21\"},{\"rateKey\":\"20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"359.87\",\"allotment\":50,\"checkIn\":\"2017-09-13\",\"checkOut\":\"2017-09-18\"},{\"rateKey\":\"20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"339.58\",\"allotment\":50,\"checkIn\":\"2017-09-14\",\"checkOut\":\"2017-09-19\"},{\"rateKey\":\"20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"299.00\",\"allotment\":55,\"checkIn\":\"2017-09-17\",\"checkOut\":\"2017-09-22\"}]},{\"rateKey\":\"20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"340.64\",\"allotment\":50,\"rateCommentsId\":\"52|83713|0\",\"paymentType\":\"AT_WEB\",\"packaging\":false,\"boardCode\":\"HB\",\"boardName\":\"HALF BOARD\",\"cancellationPolicies\":[{\"amount\":\"84.36\",\"from\":\"2017-09-12T23:59:00+02:00\"},{\"amount\":\"168.72\",\"from\":\"2017-09-14T23:59:00+02:00\"}],\"rooms\":1,\"adults\":2,\"children\":0,\"shiftRates\":[{\"rateKey\":\"20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"320.35\",\"allotment\":50,\"checkIn\":\"2017-09-16\",\"checkOut\":\"2017-09-21\"},{\"rateKey\":\"20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"381.22\",\"allotment\":50,\"checkIn\":\"2017-09-13\",\"checkOut\":\"2017-09-18\"},{\"rateKey\":\"20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"360.93\",\"allotment\":50,\"checkIn\":\"2017-09-14\",\"checkOut\":\"2017-09-19\"},{\"rateKey\":\"20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"320.35\",\"allotment\":55,\"checkIn\":\"2017-09-17\",\"checkOut\":\"2017-09-22\"}]},{\"rateKey\":\"20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"426.08\",\"allotment\":50,\"rateCommentsId\":\"52|83715|0\",\"paymentType\":\"AT_WEB\",\"packaging\":false,\"boardCode\":\"FB\",\"boardName\":\"FULL BOARD\",\"cancellationPolicies\":[{\"amount\":\"101.44\",\"from\":\"2017-09-12T23:59:00+02:00\"},{\"amount\":\"202.88\",\"from\":\"2017-09-14T23:59:00+02:00\"}],\"rooms\":1,\"adults\":2,\"children\":0,\"shiftRates\":[{\"rateKey\":\"20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"405.80\",\"allotment\":50,\"checkIn\":\"2017-09-16\",\"checkOut\":\"2017-09-21\"},{\"rateKey\":\"20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"466.64\",\"allotment\":50,\"checkIn\":\"2017-09-13\",\"checkOut\":\"2017-09-18\"},{\"rateKey\":\"20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"446.36\",\"allotment\":50,\"checkIn\":\"2017-09-14\",\"checkOut\":\"2017-09-19\"},{\"rateKey\":\"20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"405.80\",\"allotment\":55,\"checkIn\":\"2017-09-17\",\"checkOut\":\"2017-09-22\"}]},{\"rateKey\":\"20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"511.49\",\"allotment\":50,\"rateCommentsId\":\"52|83717|0\",\"paymentType\":\"AT_WEB\",\"packaging\":false,\"boardCode\":\"AI\",\"boardName\":\"ALL INCLUSIVE\",\"cancellationPolicies\":[{\"amount\":\"118.53\",\"from\":\"2017-09-12T23:59:00+02:00\"},{\"amount\":\"237.06\",\"from\":\"2017-09-14T23:59:00+02:00\"}],\"rooms\":1,\"adults\":2,\"children\":0,\"shiftRates\":[{\"rateKey\":\"20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"491.20\",\"allotment\":50,\"checkIn\":\"2017-09-16\",\"checkOut\":\"2017-09-21\"},{\"rateKey\":\"20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"552.07\",\"allotment\":50,\"checkIn\":\"2017-09-13\",\"checkOut\":\"2017-09-18\"},{\"rateKey\":\"20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"531.78\",\"allotment\":50,\"checkIn\":\"2017-09-14\",\"checkOut\":\"2017-09-19\"},{\"rateKey\":\"20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641\",\"rateClass\":\"NOR\",\"rateType\":\"BOOKABLE\",\"net\":\"491.20\",\"allotment\":55,\"checkIn\":\"2017-09-17\",\"checkOut\":\"2017-09-22\"}]}]}],\"minRate\":\"288.30\",\"maxRate\":\"552.07\",\"currency\":\"EUR\"}],\"checkIn\":\"2017-09-15\",\"total\":1,\"checkOut\":\"2017-09-20\"}}"
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "Availability by hotel code",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AvailabilityByHotelCoderequest": {
+      "title": "Availability by hotel codeRequest",
+      "example": {
+        "stay": {
+          "checkIn": "2017-11-15",
+          "checkOut": "2017-11-20"
+        },
+        "occupancies": [
+          {
+            "rooms": 1,
+            "adults": 1,
+            "children": 0
+          }
+        ],
+        "hotels": {
+          "hotel": [
+            1,
+            271
+          ]
+        }
+      },
+      "type": "object",
+      "properties": {
+        "stay": {
+          "$ref": "#/definitions/Stay"
+        },
+        "occupancies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Occupancy"
+          }
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels"
+        }
+      },
+      "required": [
+        "stay",
+        "occupancies",
+        "hotels"
+      ]
+    },
+    "Stay": {
+      "title": "Stay",
+      "type": "object",
+      "properties": {
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "checkIn",
+        "checkOut"
+      ]
+    },
+    "Occupancy": {
+      "title": "Occupancy",
+      "type": "object",
+      "properties": {
+        "rooms": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "adults": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "children": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "rooms",
+        "adults",
+        "children"
+      ]
+    },
+    "Hotels": {
+      "title": "Hotels",
+      "type": "object",
+      "properties": {
+        "hotel": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "required": [
+        "hotel"
+      ]
+    },
+    "AvailabilityByHotelCoderesponse": {
+      "title": "Availability by hotel codeResponse",
+      "example": {
+        "auditData": {
+          "processTime": "1927",
+          "timestamp": "2017-08-28 16:41:44.001",
+          "requestHost": "212.170.239.110",
+          "serverId": "sa37AUX3ROLBLIS.env#PL",
+          "environment": "[int]",
+          "release": "4c0c21f7a3982f3ad0cf88b921c4e04e7c36861f",
+          "token": "e5835c5f-9dc5-4036-94d8-ab6692584000",
+          "internal": "0|F35C1EBDD07F480E88392EC22E63A58B1641|BR|06|1|25||||||||||||1||1~1~2~0||0||0|wuupfvswdqfz342cejxfv3ku||"
+        },
+        "hotels": {
+          "hotels": [
+            {
+              "code": 1,
+              "name": "Villa Dorada",
+              "categoryCode": "3EST",
+              "categoryName": "3 STARS",
+              "destinationCode": "SAL",
+              "destinationName": "Salou Area / Costa Dorada",
+              "zoneCode": 10,
+              "zoneName": "Salou",
+              "latitude": "41.06865947991072",
+              "longitude": "1.1524744666303377",
+              "rooms": [
+                {
+                  "code": "DBT.ST",
+                  "name": "Double or Twin 2 ADULTS",
+                  "rates": [
+                    {
+                      "rateKey": "20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "308.59",
+                      "allotment": 50,
+                      "rateCommentsId": "52|83709|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "RO",
+                      "boardName": "ROOM ONLY",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "77.95",
+                          "from": "2017-09-12T21:59:00+00:00"
+                        },
+                        {
+                          "amount": "155.90",
+                          "from": "2017-09-14T21:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 2,
+                      "children": 0,
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "288.30",
+                          "allotment": 50,
+                          "checkIn": "2017-09-16",
+                          "checkOut": "2017-09-21"
+                        },
+                        {
+                          "rateKey": "20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "349.17",
+                          "allotment": 50,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "328.88",
+                          "allotment": 50,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        },
+                        {
+                          "rateKey": "20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG RO|RO||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "288.30",
+                          "allotment": 55,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    },
+                    {
+                      "rateKey": "20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "319.29",
+                      "allotment": 50,
+                      "rateCommentsId": "52|83711|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "BB",
+                      "boardName": "BED AND BREAKFAST",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "80.09",
+                          "from": "2017-09-12T21:59:00+00:00"
+                        },
+                        {
+                          "amount": "160.18",
+                          "from": "2017-09-14T21:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 2,
+                      "children": 0,
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "299.00",
+                          "allotment": 50,
+                          "checkIn": "2017-09-16",
+                          "checkOut": "2017-09-21"
+                        },
+                        {
+                          "rateKey": "20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "359.87",
+                          "allotment": 50,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "339.58",
+                          "allotment": 50,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        },
+                        {
+                          "rateKey": "20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG BB|BB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "299.00",
+                          "allotment": 55,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    },
+                    {
+                      "rateKey": "20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "340.64",
+                      "allotment": 50,
+                      "rateCommentsId": "52|83713|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "HB",
+                      "boardName": "HALF BOARD",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "84.36",
+                          "from": "2017-09-12T21:59:00+00:00"
+                        },
+                        {
+                          "amount": "168.72",
+                          "from": "2017-09-14T21:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 2,
+                      "children": 0,
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "320.35",
+                          "allotment": 50,
+                          "checkIn": "2017-09-16",
+                          "checkOut": "2017-09-21"
+                        },
+                        {
+                          "rateKey": "20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "381.22",
+                          "allotment": 50,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "360.93",
+                          "allotment": 50,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        },
+                        {
+                          "rateKey": "20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG HB|HB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "320.35",
+                          "allotment": 55,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    },
+                    {
+                      "rateKey": "20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "426.08",
+                      "allotment": 50,
+                      "rateCommentsId": "52|83715|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "FB",
+                      "boardName": "FULL BOARD",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "101.44",
+                          "from": "2017-09-12T21:59:00+00:00"
+                        },
+                        {
+                          "amount": "202.88",
+                          "from": "2017-09-14T21:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 2,
+                      "children": 0,
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "405.80",
+                          "allotment": 50,
+                          "checkIn": "2017-09-16",
+                          "checkOut": "2017-09-21"
+                        },
+                        {
+                          "rateKey": "20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "466.64",
+                          "allotment": 50,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "446.36",
+                          "allotment": 50,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        },
+                        {
+                          "rateKey": "20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG FB|FB||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "405.80",
+                          "allotment": 55,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    },
+                    {
+                      "rateKey": "20170915|20170920|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                      "rateClass": "NOR",
+                      "rateType": "BOOKABLE",
+                      "net": "511.49",
+                      "allotment": 50,
+                      "rateCommentsId": "52|83717|0",
+                      "paymentType": "AT_WEB",
+                      "packaging": false,
+                      "boardCode": "AI",
+                      "boardName": "ALL INCLUSIVE",
+                      "cancellationPolicies": [
+                        {
+                          "amount": "118.53",
+                          "from": "2017-09-12T21:59:00+00:00"
+                        },
+                        {
+                          "amount": "237.06",
+                          "from": "2017-09-14T21:59:00+00:00"
+                        }
+                      ],
+                      "rooms": 1,
+                      "adults": 2,
+                      "children": 0,
+                      "shiftRates": [
+                        {
+                          "rateKey": "20170916|20170921|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "491.20",
+                          "allotment": 50,
+                          "checkIn": "2017-09-16",
+                          "checkOut": "2017-09-21"
+                        },
+                        {
+                          "rateKey": "20170913|20170918|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "552.07",
+                          "allotment": 50,
+                          "checkIn": "2017-09-13",
+                          "checkOut": "2017-09-18"
+                        },
+                        {
+                          "rateKey": "20170914|20170919|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "531.78",
+                          "allotment": 50,
+                          "checkIn": "2017-09-14",
+                          "checkOut": "2017-09-19"
+                        },
+                        {
+                          "rateKey": "20170917|20170922|W|52|1|DBT.ST|CG-EXT LONG AI|AI||1~2~0||N@F35C1EBDD07F480E88392EC22E63A58B1641",
+                          "rateClass": "NOR",
+                          "rateType": "BOOKABLE",
+                          "net": "491.20",
+                          "allotment": 55,
+                          "checkIn": "2017-09-17",
+                          "checkOut": "2017-09-22"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "minRate": "288.30",
+              "maxRate": "552.07",
+              "currency": "EUR"
+            }
+          ],
+          "checkIn": "2017-09-15",
+          "total": 1,
+          "checkOut": "2017-09-20"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "auditData": {
+          "$ref": "#/definitions/AuditData"
+        },
+        "hotels": {
+          "$ref": "#/definitions/Hotels6"
+        }
+      },
+      "required": [
+        "auditData",
+        "hotels"
+      ]
+    },
+    "AuditData": {
+      "title": "AuditData",
+      "type": "object",
+      "properties": {
+        "processTime": {
+          "description": "",
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "",
+          "type": "string"
+        },
+        "requestHost": {
+          "description": "",
+          "type": "string"
+        },
+        "serverId": {
+          "description": "",
+          "type": "string"
+        },
+        "environment": {
+          "description": "",
+          "type": "string"
+        },
+        "release": {
+          "description": "",
+          "type": "string"
+        },
+        "token": {
+          "description": "",
+          "type": "string"
+        },
+        "internal": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "processTime",
+        "timestamp",
+        "requestHost",
+        "serverId",
+        "environment",
+        "release",
+        "token",
+        "internal"
+      ]
+    },
+    "Hotels6": {
+      "title": "Hotels6",
+      "type": "object",
+      "properties": {
+        "hotels": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Hotels7"
+          }
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "total": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "hotels",
+        "checkIn",
+        "total",
+        "checkOut"
+      ]
+    },
+    "Hotels7": {
+      "title": "Hotels7",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryCode": {
+          "description": "",
+          "type": "string"
+        },
+        "categoryName": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationCode": {
+          "description": "",
+          "type": "string"
+        },
+        "destinationName": {
+          "description": "",
+          "type": "string"
+        },
+        "zoneCode": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "zoneName": {
+          "description": "",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "",
+          "type": "string"
+        },
+        "longitude": {
+          "description": "",
+          "type": "string"
+        },
+        "rooms": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Room"
+          }
+        },
+        "minRate": {
+          "description": "",
+          "type": "string"
+        },
+        "maxRate": {
+          "description": "",
+          "type": "string"
+        },
+        "currency": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "categoryCode",
+        "categoryName",
+        "destinationCode",
+        "destinationName",
+        "zoneCode",
+        "zoneName",
+        "latitude",
+        "longitude",
+        "rooms",
+        "minRate",
+        "maxRate",
+        "currency"
+      ]
+    },
+    "Room": {
+      "title": "Room",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "description": "",
+          "type": "string"
+        },
+        "rates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Rate"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "rates"
+      ]
+    },
+    "Rate": {
+      "title": "Rate",
+      "type": "object",
+      "properties": {
+        "rateKey": {
+          "description": "",
+          "type": "string"
+        },
+        "rateClass": {
+          "description": "",
+          "type": "string"
+        },
+        "rateType": {
+          "description": "",
+          "type": "string"
+        },
+        "net": {
+          "description": "",
+          "type": "string"
+        },
+        "allotment": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "rateCommentsId": {
+          "description": "",
+          "type": "string"
+        },
+        "paymentType": {
+          "description": "",
+          "type": "string"
+        },
+        "packaging": {
+          "description": "",
+          "type": "boolean"
+        },
+        "boardCode": {
+          "description": "",
+          "type": "string"
+        },
+        "boardName": {
+          "description": "",
+          "type": "string"
+        },
+        "cancellationPolicies": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CancellationPolicy"
+          }
+        },
+        "rooms": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "adults": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "children": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "shiftRates": {
+          "description": "",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ShiftRate"
+          }
+        }
+      },
+      "required": [
+        "rateKey",
+        "rateClass",
+        "rateType",
+        "net",
+        "allotment",
+        "rateCommentsId",
+        "paymentType",
+        "packaging",
+        "boardCode",
+        "boardName",
+        "cancellationPolicies",
+        "rooms",
+        "adults",
+        "children",
+        "shiftRates"
+      ]
+    },
+    "CancellationPolicy": {
+      "title": "CancellationPolicy",
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "",
+          "type": "string"
+        },
+        "from": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "from"
+      ]
+    },
+    "ShiftRate": {
+      "title": "ShiftRate",
+      "type": "object",
+      "properties": {
+        "rateKey": {
+          "description": "",
+          "type": "string"
+        },
+        "rateClass": {
+          "description": "",
+          "type": "string"
+        },
+        "rateType": {
+          "description": "",
+          "type": "string"
+        },
+        "net": {
+          "description": "",
+          "type": "string"
+        },
+        "allotment": {
+          "description": "",
+          "type": "integer",
+          "format": "int32"
+        },
+        "checkIn": {
+          "description": "",
+          "type": "string"
+        },
+        "checkOut": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rateKey",
+        "rateClass",
+        "rateType",
+        "net",
+        "allotment",
+        "checkIn",
+        "checkOut"
+      ]
+    }
+  }
+}
